@@ -1,7 +1,7 @@
 {
-  "pages": [
+  "pages": [    "pages/index/index",
     "pages/welcome/welcome",
-    "pages/index/index",
+
     "pages/movies/movies",
     "pages/weather/weather",
     "pages/switchcity/switchcity",
@@ -21,7 +21,7 @@
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "position": "top",
+    "position": "bottom",
     "backgroundColor": "#2a579a",
     "color": "#DCEDC8",
     "selectedColor": "#DCEDC8",
