@@ -11,7 +11,7 @@ Page({
     sliderList: [
       { selected: true, imageSource: '../../images/1.jpg' },
       { selected: false, imageSource: '../../images/2.jpg' },
-       { selected: false, imageSource: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597664766028&di=ff501631d4364b4b46b3e0c7a150f38f&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Fback_pic%2F03%2F79%2F72%2F9157c2e178bc4ad.jpg' },
+      { selected: false, imageSource: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597664766028&di=ff501631d4364b4b46b3e0c7a150f38f&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Fback_pic%2F03%2F79%2F72%2F9157c2e178bc4ad.jpg' },
 
       // { selected: false, imageSource: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597664497332&di=329c55c5f0bfcc9b177d9a1ebeade39e&imgtype=0&src=http%3A%2F%2Fwww.50cnnet.com%2Fuploads%2Ffile%2Fcontent%2F2018%2F01%2F5a587e00c4aad.jpg' },
     ],
@@ -31,10 +31,6 @@ Page({
     });
     //定位当前城市
     this.getLocation();
-    //获取豆瓣电影正在热映信息
-    var inTheatersUrl = app.globalData.doubanBase +
-      "/v2/movie/in_theaters" + "?start=0&count=6" + "&apikey=" + app.globalData.appKey;;
-    this.getMovieListData(inTheatersUrl, "inTheaters", "正在热映");
 
     //获取用户信息
     wx.getUserInfo({
@@ -132,7 +128,7 @@ Page({
   onMovieTap: function (event) {
     var movieId = event.currentTarget.dataset.movieid;
     wx.navigateTo({
-      url: "../movies/movie-detail/movie-detail?id=" + movieId
+     // url: "../movies/movie-detail/movie-detail?id=" + movieId
     })
   },
   //点击更多电影，跳转页面
