@@ -128,6 +128,9 @@ Page({
   callBackRes: function (res) {
     console.log(res);
     if (res.data.code == 200) {
+      wx.navigateTo({
+        url: '../index/index'
+      })
       wx.setStorage({
         data: res.data.data,
         key: 'userInfo',
@@ -137,9 +140,6 @@ Page({
         success (res) {
           //console.log(res.data)
         }
-      })
-      wx.navigateTo({
-        url: '../index/index'
       })
     } else {
       wx.showToast({
