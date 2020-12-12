@@ -128,7 +128,7 @@ Page({
   callBackRes: function (res) {
     console.log(res);
     if (res.data.code == 200) {
-      wx.navigateTo({
+      wx.switchTab({
         url: '../index/index'
       })
       wx.setStorage({
