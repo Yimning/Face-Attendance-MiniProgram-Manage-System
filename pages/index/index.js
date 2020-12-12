@@ -9,9 +9,11 @@ Page({
     location: '',
     county: '',
     sliderList: [
-      { selected: true, imageSource: '../../images/2.jpg' },
-      { selected: false, imageSource: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597664766028&di=ff501631d4364b4b46b3e0c7a150f38f&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Fback_pic%2F03%2F79%2F72%2F9157c2e178bc4ad.jpg' },
-      { selected: false, imageSource: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597664497332&di=329c55c5f0bfcc9b177d9a1ebeade39e&imgtype=0&src=http%3A%2F%2Fwww.50cnnet.com%2Fuploads%2Ffile%2Fcontent%2F2018%2F01%2F5a587e00c4aad.jpg' },
+      { selected: true, imageSource: '../../images/1.jpg' },
+      { selected: false, imageSource: '../../images/2.jpg' },
+       { selected: false, imageSource: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597664766028&di=ff501631d4364b4b46b3e0c7a150f38f&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Fback_pic%2F03%2F79%2F72%2F9157c2e178bc4ad.jpg' },
+
+      // { selected: false, imageSource: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597664497332&di=329c55c5f0bfcc9b177d9a1ebeade39e&imgtype=0&src=http%3A%2F%2Fwww.50cnnet.com%2Fuploads%2Ffile%2Fcontent%2F2018%2F01%2F5a587e00c4aad.jpg' },
     ],
     today: "",
     inTheaters: {},
@@ -31,7 +33,7 @@ Page({
     this.getLocation();
     //获取豆瓣电影正在热映信息
     var inTheatersUrl = app.globalData.doubanBase +
-      "/v2/movie/in_theaters" + "?start=0&count=6"+"&apikey=" + app.globalData.appKey;;
+      "/v2/movie/in_theaters" + "?start=0&count=6" + "&apikey=" + app.globalData.appKey;;
     this.getMovieListData(inTheatersUrl, "inTheaters", "正在热映");
 
     //获取用户信息
@@ -46,14 +48,14 @@ Page({
     })
 
   },
-    /*查看图片*/
-    viewMoviePostImg: function (e) {
-      var src = e.currentTarget.dataset.src;
-      wx.previewImage({
-        current: src, // 当前显示图片的http链接
-        urls: [src] // 需要预览的图片http链接列表
-      })
-    },
+  /*查看图片*/
+  viewMoviePostImg: function (e) {
+    var src = e.currentTarget.dataset.src;
+    wx.previewImage({
+      current: src, // 当前显示图片的http链接
+      urls: [src] // 需要预览的图片http链接列表
+    })
+  },
 
   //调用豆瓣api
   getMovieListData: function (url, settedKey, categoryTitle) {
@@ -112,8 +114,8 @@ Page({
         wx.request({
           url: `https://apis.map.qq.com/ws/geocoder/v1/?location=${latitude},${longitude}&key=${app.globalData.tencentMapKey}`,
           success: res => {
-            app.globalData.defaultCity = app.globalData.defaultCity ? app.globalData.defaultCity:res.data.result.ad_info.city;
-            app.globalData.defaultCounty = app.globalData.defaultCounty ? app.globalData.defaultCounty :res.data.result.ad_info.district;
+            app.globalData.defaultCity = app.globalData.defaultCity ? app.globalData.defaultCity : res.data.result.ad_info.city;
+            app.globalData.defaultCounty = app.globalData.defaultCounty ? app.globalData.defaultCounty : res.data.result.ad_info.district;
             that.setData({
               location: app.globalData.defaultCity,
               county: app.globalData.defaultCounty
@@ -143,7 +145,7 @@ Page({
   //获取天气
   getWeather: function (e) {
     var length = this.data.location.length;
-    var city = this.data.location.slice(0, length-1); //分割字符串
+    var city = this.data.location.slice(0, length - 1); //分割字符串
     console.log(city);
     var that = this;
     var param = {
@@ -160,7 +162,7 @@ Page({
       success: function (res) {
         app.globalData.weatherData = res.data.HeWeather6[0].status == "unknown city" ? "" : res.data.HeWeather6[0];
         var weatherData = app.globalData.weatherData ? app.globalData.weatherData.now : "暂无该城市天气信息";
-        var dress = app.globalData.weatherData ? res.data.HeWeather6[0].lifestyle[1] : { txt: "暂无该城市天气信息"};
+        var dress = app.globalData.weatherData ? res.data.HeWeather6[0].lifestyle[1] : { txt: "暂无该城市天气信息" };
         that.setData({
           weatherData: weatherData, //今天天气情况数组 
           dress: dress //生活指数
