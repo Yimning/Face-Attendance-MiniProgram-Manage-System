@@ -2,12 +2,10 @@
   "pages": [    "pages/index/index",
     "pages/welcome/welcome",
 
-    "pages/movies/movies",
+    "pages/table/table",
     "pages/weather/weather",
     "pages/switchcity/switchcity",
     "pages/news/news",
-    "pages/movies/movie-detail/movie-detail",
-    "pages/movies/more-movie/more-movie",
     "pages/map/map",
     "pages/logs/logs",
     "pages/more/more",
@@ -35,8 +33,8 @@
         "text": "附近"
       },
       {
-        "pagePath": "pages/movies/movies",
-        "text": "电影"
+        "pagePath": "pages/table/table",
+        "text": "课程表"
       },
       {
         "pagePath": "pages/news/news",
