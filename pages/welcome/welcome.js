@@ -41,7 +41,7 @@ Page({
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
-          })
+          }) 
         }
       })
     }
@@ -137,6 +137,9 @@ Page({
         success (res) {
           //console.log(res.data)
         }
+      })
+      wx.navigateTo({
+        url: '../index/index'
       })
     } else {
       wx.showToast({
