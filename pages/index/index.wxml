@@ -1,6 +1,6 @@
 <!--index.wxml-->
-<import src="../movies/movie-list/movie-list-template.wxml" />
-<import src="../movies/movie-grid/movie-grid-template.wxml" />
+<!-- <import src="../movies/movie-list/movie-list-template.wxml" />
+<import src="../movies/movie-grid/movie-grid-template.wxml" /> -->
 <view class='customSwiper'>
   <swiper class='banner' autoplay='true' interval='5000' duration='300' bindchange='switchTab'>
     <block wx:for="{{sliderList}}" wx:key="key">
@@ -42,9 +42,9 @@
       <view class="life" style='text-indent:1em;'>{{dress.txt}}</view>
     </view>
   </view>
-  <view class="container" wx:if="{{containerShow}}">
+  <!-- <view class="container" wx:if="{{containerShow}}">
     <view class="movies-template">
       <template is="movieListTemplate" data="{{...inTheaters}}" />
     </view>
-  </view>
+  </view> -->
 </view>
