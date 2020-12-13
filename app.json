@@ -1,8 +1,8 @@
 {
-  "pages": [    "pages/index/index",
+  "pages": [   "pages/table/table",  
     "pages/welcome/welcome",
-
-    "pages/table/table",
+    "pages/index/index",
+  
     "pages/weather/weather",
     "pages/switchcity/switchcity",
     "pages/news/news",
