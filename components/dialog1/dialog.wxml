@@ -1,0 +1,20 @@
+<!--confirm.wxml-->
+<view hidden='{{!isShow}}'>
+  <!-- 遮罩层 -->
+  <view class="chain-mask"></view>
+  <view class='chain-dialog'>
+    <view class='chain-dialog-title'>{{title}}</view>
+    <view class='chain-dialog-content'>{{content}}</view>
+    <view class='chain-dialog-btn-view'>
+      <!-- 第一种事件调用 -->
+      
+      <!-- <view class='chain-dialog-btn' catchtap='_cancelEvent'>{{cancelText}}</view>
+      <view class='chain-dialog-btn chain-dialog-btn-ok' catchtap='_okEvent'>{{okText}}</view> 
+      -->
+      <!-- 第二种事件调用 -->
+      <view class='chain-dialog-btn' bindtap='_cancelClick'>{{cancelText}}</view>
+      <view class='chain-dialog-btn chain-dialog-btn-ok' bindtap='_okClick'>{{okText}}</view>
+   
+    </view>
+  </view>
+</view>
