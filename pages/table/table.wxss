@@ -1,4 +1,14 @@
 /**index.wxss**/
+.container {
+  height: 1200rpx;
+  width: 730rpx;
+  display: flex;
+}
+
+.timeTable {
+  background-color: #D2E6B3;
+  color: #7cba23;
+}
 
 .flex-item {
   width: 95rpx;
