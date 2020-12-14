@@ -1,6 +1,6 @@
 <view class="circle">
   <view class="page__hd">
-    <navigator url="/pages/search/id/index" hover-class="none">
+    <!-- <navigator url="/pages/search/id/index" hover-class="none">
       <view class="weui-item border-shadow background-2">
         <view class="weui-flex">
           <view class="weui-flex__item">
@@ -14,7 +14,7 @@
           </view>
         </view>
       </view>
-    </navigator>
+    </navigator> -->
     <navigator url="/pages/more/news/news" hover-class="none">
       <view class="weui-item border-shadow background-1">
         <view class="weui-flex">
@@ -25,7 +25,7 @@
             <view class="weui-item__desc">Reading</view>
           </view>
           <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/search_icon.png" />
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/lib.png" />
           </view>
         </view>
       </view>
@@ -36,12 +36,12 @@
         <view class="weui-flex">
           <view class="weui-flex__item">
             <view class="weui-item__title">
-             发现周边
+              发现周边
             </view>
             <view class="weui-item__desc">Near</view>
           </view>
           <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/search_icon.png" />
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/near.png" />
           </view>
         </view>
       </view>
@@ -52,12 +52,13 @@
         <view class="weui-flex">
           <view class="weui-flex__item">
             <view class="weui-item__title">
-             更多
+              更多
             </view>
             <view class="weui-item__desc">More</view>
           </view>
           <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/search_icon.png" />
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
+              src="/images/search_icon.png" />
           </view>
         </view>
       </view>
@@ -74,11 +75,13 @@
             <view class="weui-item__desc">Instructions</view>
           </view>
           <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/help_icon.png" />
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
+              src="/images/help_icon.png" />
           </view>
         </view>
       </view>
     </navigator>
+
     <button class="clear" open-type="contact">
       <view class="weui-item border-shadow background-1">
         <view class="weui-flex">
@@ -89,22 +92,25 @@
             <view class="weui-item__desc">Contact Us</view>
           </view>
           <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/service_icon.png" />
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
+              src="/images/service_icon.png" />
           </view>
         </view>
       </view>
     </button>
-    <button class="clear" open-type="share">
+
+    <button class='clear' open-type="share" catchtap="share">
       <view class="weui-item border-shadow background-2">
         <view class="weui-flex">
           <view class="weui-flex__item">
             <view class="weui-item__title">
-              分享课表
+              分享
             </view>
             <view class="weui-item__desc">Share</view>
           </view>
           <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/share_icon.png" />
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
+              src="/images/share_icon.png" />
           </view>
         </view>
       </view>
@@ -114,12 +120,13 @@
         <view class="weui-flex">
           <view class="weui-flex__item">
             <view class="weui-item__title">
-              关于课表
+              关于
             </view>
             <view class="weui-item__desc">About</view>
           </view>
           <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/about_icon.png" />
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
+              src="/images/about_icon.png" />
           </view>
         </view>
       </view>

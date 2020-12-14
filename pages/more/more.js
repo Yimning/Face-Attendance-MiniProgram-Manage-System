@@ -66,5 +66,5 @@ Page({
       desc: '「FaceAttendance」提供在校生学生与教师课表、考勤情况等查询服务',
       path: '/pages/more/more'
     }
-  }
+  },
 })
