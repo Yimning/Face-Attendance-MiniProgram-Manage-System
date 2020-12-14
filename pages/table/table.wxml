@@ -16,11 +16,63 @@
     </view>
 
     <!--课表-->
-    <view wx:for="{{CourseInfo}}" wx:key="key">
+    <view wx:for="{{courseInfo}}" wx:key="key">
       <view class="flex-item kcb-item" bindtap="showCardView" data-statu="open" data-index="{{index}}"
-        style="margin-left:{{(item.courseDay-1)*100}}rpx;margin-top:{{(item.coursePeriodF-1)*100+5}}rpx;height:{{item.skcd*100-5}}rpx;background-color:{{colorArrays[index%9]}}">
-        <view class="smalltext">{{item.courseName}}</view>
+        data-item="{{item}}"
+        style="margin-left:{{(item.course.courseDay-1)*100}}rpx;margin-top:{{(item.course.coursePeriodF-1)*100+5}}rpx;height:{{(item.course.coursePeriodB-item.course.coursePeriodF)*100-5}}rpx;background-color:{{colorArrays[index%9]}}">
+        <view class="smalltext">{{item.course.courseName}}@{{item.course.classRoomID}}</view>
       </view>
     </view>
+    <!-- 对应第一种事件调用 -->
+    <dialog-confirm id='dialogConfirm' bind:cancelEvent="cancelEvent" bind:okEvent="okEvent"></dialog-confirm>
+    <!--content-->
+    <!--使用animation属性指定需要执行的动画-->
+    <view animation="{{animationData}}" class="drawer_box" wx:if="{{showOneButtonDialog}}">
+      <!--drawer content-->
+      <!-- <view class="drawer_title">弹窗标题</view> -->
+      <view class="drawer_content">
+        <view class="top grid">
+          <label class="title col-0">课程名:</label>
+          <input class="input_base input_h30 col-1" value="{{selectedCourse.course.courseName}}" disabled="false"></input>
+        </view>
+        <view class="top grid">
+          <label class="title col-0">课程号</label>
+          <input class="input_base input_h30 col-1" value="{{selectedCourse.course.courseID}}" disabled="false"></input>
+        </view>
+        <view class="top grid">
+          <label class="title col-0">上课时间</label>
+          <input class="input_base input_h30 col-1" value="{{selectedCourse.course.courseTime}}" disabled="false"></input>
+        </view>
+        <view class="top grid">
+          <label class="title col-0"> 课程信息</label>
+          <input class="input_base input_h30 col-1" disabled="false" value="每周{{weekTable[selectedCourse.course.courseDay]}}第{{selectedCourse.course.coursePeriodF}}-{{selectedCourse.course.coursePeriodB}}共{{(selectedCourse.course.coursePeriodB)-(selectedCourse.course.coursePeriodF)+1}}节"></input>
+        </view>
+        <view class="top bottom grid">
+          <label class="title col-0">上课地点</label>
+          <input class="input_base input_h30 col-1" disabled="false"  value="{{selectedCourse.course.classRoomID}}"></input>
+        </view>
+        <view class="top bottom grid">
+          <label class="title col-0">上课教师</label>
+          <input class="input_base input_h30 col-1" disabled="false" value="{{selectedCourse.teacher.teacherName}}"></input>
+        </view>
+        <view class="top bottom grid">
+          <label class="title col-0">上课周期</label>
+          <input class="input_base input_h30 col-1" disabled="false" value="{{selectedCourse.course.courseWeekF}}-{{selectedCourse.course.courseWeekB}}周"></input>
+        </view>
+      </view>
+      <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>
+    </view>
+
+
+
+
+
+
+
+
+
+
+
+
   </view>
 </scroll-view>

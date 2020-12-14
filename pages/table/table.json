@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "dialog-confirm": "/components/dialog1/dialog"
+  }
+}
