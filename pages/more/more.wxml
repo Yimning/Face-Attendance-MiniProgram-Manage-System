@@ -1,62 +1,84 @@
-<view class='moreTab'>
-	<view class="{{selsectState[0]?'moreSelected':''}}" bindtap='clickJoke'>
-		<image class="icon-image" src="../../images/happy.png" />
-		<view class='tabText'>开心一刻</view>
-	</view>
-	<view class="{{selsectState[1]?'moreSelected':''}}" bindtap='clickDict'>
-		<image class="icon-image" src="../../images/cidian.png" />
-		<view class='tabText'>词典</view>
-	</view>
-
-	<view class="{{selsectState[2]?'moreSelected':''}}" bindtap='clickExpre'>
-		<image class="icon-image" src="../../images/kuaidi.png" />
-		<view class='tabText'>快递</view>
-	</view>
-	<view class="{{selsectState[3]?'moreSelected':''}}" bindtap='clickMore'>
-		<image class="icon-image" src="../../images/more.png" />
-		<view class='tabText more'>敬请期待...</view>
-	</view>
+<view class="circle">
+  <view class="page__hd">
+    <navigator url="/pages/search/id/index" hover-class="none">
+      <view class="weui-item border-shadow background-1">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="weui-item__title">
+              学号查询
+            </view>
+            <view class="weui-item__desc">Student ID Inquiry</view>
+          </view>
+          <view class="weui-flex__item">
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/search_icon.png" />
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url="/pages/more/help" hover-class="none">
+      <view class="weui-item border-shadow background-2">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="weui-item__title">
+              使用帮助
+            </view>
+            <view class="weui-item__desc">Instructions</view>
+          </view>
+          <view class="weui-flex__item">
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/help_icon.png" />
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <button class="clear" open-type="contact">
+      <view class="weui-item border-shadow background-1">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="weui-item__title">
+              联系客服
+            </view>
+            <view class="weui-item__desc">Contact Us</view>
+          </view>
+          <view class="weui-flex__item">
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/service_icon.png" />
+          </view>
+        </view>
+      </view>
+    </button>
+    <button class="clear" open-type="share">
+      <view class="weui-item border-shadow background-2">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="weui-item__title">
+              分享课表
+            </view>
+            <view class="weui-item__desc">Share</view>
+          </view>
+          <view class="weui-flex__item">
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/share_icon.png" />
+          </view>
+        </view>
+      </view>
+    </button>
+    <navigator url="/pages/more/about" hover-class="none">
+      <view class="weui-item border-shadow background-1">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="weui-item__title">
+              关于课表
+            </view>
+            <view class="weui-item__desc">About</view>
+          </view>
+          <view class="weui-flex__item">
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/about_icon.png" />
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view class="page__bd">
+    <view class="weui-footer weui-footer_fixed-bottom">
+      <view class="weui-footer__text">Designed by Yimning</view>
+    </view>
+  </view>
 </view>
-
-<view class="more_container">
-	<view wx:if="{{selectIndex>1}}">
-		<!-- <block > -->
-		<image class="conImage" src="../../images/more/more{{selectIndex}}.png" />
-		<!-- </block> -->
-	</view>
-
-	<view wx:elif="{{selectIndex==0}}">
-		<block wx:for="{{joke}}" wx:for-item="item" wx:for-index="idx">
-			<view class="showContent">
-				<view class="tip">joke{{idx+1}}</view>
-				<text>{{item.content}}</text>
-			</view>
-		</block>
-		<view class="loadMore" bindtap="onPullDownRefresh">
-			<text>{{loadMore}}</text>
-		</view>
-	</view>
-
-	<view wx:elif="{{selectIndex==1}}">
-		<view class="search">
-			<icon type="search" class="search-img" size="13" color="#405f80"></icon>
-			<input type="text" placeholder="一五一十" placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindBlur" />
-			<image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" bindtap="onCancelImgTap"></image>
-		</view>
-		<block wx:for="{{dictionary}}" wx:for-item="item" wx:for-index="idx">
-			<view class="showContent">
-				<view class="tip">拼音:<text>{{item.pinyin}}</text></view> 
-				<view class="tip">成语解释:<text>{{item.chengyujs}}</text></view> 
-				<view class="tip">词语解释:<text>{{item.ciyujs}}</text></view>
-				<view class="tip">造句:<text>{{item.lizi}}</text></view> 
-				<view class="tip">同义词:<text>{{item.tongyi}}</text></view> 
-			</view>
-		</block>
-	</view>
-
-</view>
-<!-- <view> 
-  <text class="more_info" >友情链接（点击下面文字扫码进入）</text> 
-  <text class="{{selsectState[3]?'more_info moreSelected':'more_info'}}" bindtap='clickGithub'>本项目github地址:https://github.com/yllg </text> 
-  <text class="{{selsectState[4]?'more_info moreSelected':'more_info'}}" bindtap='clickBlog'>我的博客园地址:http://www.cnblogs.com/xuanbiyijue/</text> 
-</view>  -->
