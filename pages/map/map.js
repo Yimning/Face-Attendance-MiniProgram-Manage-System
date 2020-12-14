@@ -28,6 +28,7 @@ Page({
     };
     var success = function (data) {
       wxMarkerData = data.wxMarkerData;
+      console.log(data)
       that.setData({
         markers: wxMarkerData,
         fail: fail,
@@ -84,7 +85,7 @@ Page({
     this.setData({
       searchMethod: '酒店',
       selsectState: [1, 0, 0],
-      placeData: { title: '点击图上marker获得附近-酒店-信息☺️' }
+      placeData: { title: '点击图上marker获得附近-附近-信息☺️' }
     });
     this.onShow();
   },
