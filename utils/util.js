@@ -76,9 +76,9 @@ function GetRequest(url, data, callBackRes, callBackError) {
   wx.request({
     url: url,
     method: 'GET',
-    data,
+    data: data,
     header: {
-      "Content-Type": "json"
+      "content-type":'application/json'
     },
     success: function (res) {
       callBackRes(res);
@@ -95,6 +95,7 @@ function PostRequest(url, data, callBackRes, callBackError) {
     data: data,            //这里是发送给服务器的参数（参数名：参数值）  
     header: {
       'Content-Type': 'application/json'  //这里注意POST请求
+      // "content-type":'application/x-www-form-urlencoded'
     },
     success: function (res) {
       callBackRes(res);
