@@ -5,7 +5,8 @@
   <swiper class='banner' autoplay='true' interval='5000' duration='300' bindchange='switchTab'>
     <block wx:for="{{sliderList}}" wx:key="key">
       <swiper-item>
-        <image style='width:100%;height:100%;' catchtap="viewMoviePostImg" data-src="{{item.imageSource}}" src="{{item.imageSource}}"></image>
+        <image style='width:100%;height:100%;' catchtap="viewMoviePostImg" data-src="{{item.imageSource}}"
+          src="{{item.imageSource}}"></image>
       </swiper-item>
     </block>
   </swiper>
@@ -21,8 +22,8 @@
   <view class="hotcity-common" style="display:inline;">当前位置: </view>
   <view class="thisCityName">{{location}}{{county}}</view>
   <view class="thisCityName" bindtap="jump">
-    <icon type="download" size="18" color='#2a579a' class='changeCity'/>
-    <text>更改定位</text>  
+    <icon type="download" size="18" color='#2a579a' class='changeCity' />
+    <text>更改定位</text>
   </view>
   <view class="weatherwrap" bindtap='gotoWeather'>
     <!--显示当天的天气信息-->
@@ -42,9 +43,30 @@
       <view class="life" style='text-indent:1em;'>{{dress.txt}}</view>
     </view>
   </view>
-  <!-- <view class="container" wx:if="{{containerShow}}">
-    <view class="movies-template">
-      <template is="movieListTemplate" data="{{...inTheaters}}" />
+
+  <view class="today-course" style="display:inline;">今日课程: </view>
+  <!--当天课程列表 -->
+  <view class="course-list" wx:if="{{!haveNotCourseToday}}">
+    <block wx:for="{{courseInfo}}" wx:key="key">
+      <view class="course-item" data-courseInfo="{{item}}" bindtap="bindViewTap">
+        <view class="course-text">
+          <view class="course-title">
+            <text>{{item.course.courseName}}</text>
+          </view>
+          <view>
+            <text
+              class="course-stamp">{{item.course.courseTime}}-{{item.course.classRoomID}}-第{{item.course.coursePeriodF}}-{{item.course.coursePeriodB}}节共{{item.course.coursePeriodB-item.course.coursePeriodF}}节</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="course-list" wx:if="{{haveNotCourseToday}}">
+    <view class="course-text">
+      <text class="course-title"></text>
+      <view>
+        <text class="course-stamp">今日无课程哦</text>
+      </view>
     </view>
-  </view> -->
+  </view>
 </view>

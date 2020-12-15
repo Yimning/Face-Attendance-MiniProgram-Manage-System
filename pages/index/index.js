@@ -20,7 +20,9 @@ Page({
     containerShow: true,
     weatherData: '',
     air: '',
-    dress: ''
+    dress: '',
+    courseInfo: {},
+    haveNotCourseToday: false,
   },
 
   onLoad: function (options) {
@@ -42,8 +44,45 @@ Page({
         wx.setStorageSync('userInfos', userInfos);
       }
     })
+    console.log(util.getUserInfo());
+    if (util.getUserInfo().roseID == '0') {
+      this.url = app.globalData.globalRequestUrl + "/scourse/findScourseBysIDcIDcD";
+      this.data.paramJson = {
+        sID: util.getUserInfo().userID,
+        cD: util.DateToWeekIndex(this.data.today),
+      };
+    }
+    if (util.getUserInfo().roseID == '1') {
+      this.url = app.globalData.globalRequestUrl + "/scourse/findScourseBytIDcIDcD";
+      this.data.paramJson = {
+        tID: util.getUserInfo().userID,
+        cD: util.DateToWeekIndex(this.data.today),
+      };
+    }
+    //获取课程信息
+    this.getcourseInfo(this.url, this.data.paramJson);
+  },
+  getcourseInfo(url, paramJson) {
+    util.GetRequest(url, paramJson, this.callBackRes, this.callBackError);
+  },
+  callBackRes: function (res) {
+    console.log(res)
+    if (res.data == [] || res.data == '') {
+      this.setData({
+        haveNotCourseToday: true
+      });
+    } else {
+      this.setData({
+        courseInfo: res.data,
+        haveNotCourseToday: false
+      });
+    }
 
   },
+  callBackError(res) {
+    console.log(res);
+  },
+
   /*查看图片*/
   viewMoviePostImg: function (e) {
     var src = e.currentTarget.dataset.src;
@@ -52,52 +91,6 @@ Page({
       urls: [src] // 需要预览的图片http链接列表
     })
   },
-
-  //调用豆瓣api
-  getMovieListData: function (url, settedKey, categoryTitle) {
-    wx.showNavigationBarLoading()
-    var that = this;
-    wx.request({
-      url: url,
-      method: 'GET',
-      header: {
-        "Content-Type": "json"
-      },
-      success: function (res) {
-        that.processDoubanData(res.data, settedKey, categoryTitle)
-      },
-      fail: function (error) {
-        console.log(error)
-      }
-    })
-  },
-  //获得电影数据后的处理方法
-  processDoubanData: function (moviesDouban, settedKey, categoryTitle) {
-    var movies = [];
-    for (var idx in moviesDouban.subjects) {
-      var subject = moviesDouban.subjects[idx];
-      var title = subject.title;
-      if (title.length >= 6) {
-        title = title.substring(0, 6) + "...";
-      }
-      var temp = {
-        stars: util.convertToStarsArray(subject.rating.stars),
-        title: title,
-        average: subject.rating.average,
-        coverageUrl: subject.images.large,
-        movieId: subject.id
-      }
-      movies.push(temp)
-    }
-    var readyData = {};
-    readyData[settedKey] = {
-      categoryTitle: categoryTitle,
-      movies: movies
-    }
-    this.setData(readyData);
-    wx.hideNavigationBarLoading();
-  },
-
   //定位当前城市
   getLocation: function () {
     var that = this;
@@ -124,17 +117,10 @@ Page({
     })
   },
 
-  //引入了电影模板，绑定了点击方法，这里写跳转方法即可
-  onMovieTap: function (event) {
-    var movieId = event.currentTarget.dataset.movieid;
-    wx.navigateTo({
-     // url: "../movies/movie-detail/movie-detail?id=" + movieId
-    })
-  },
-  //点击更多电影，跳转页面
-  onMoreTap: function (event) {
+  //点击查看课程表，跳转页面
+  bindViewTap: function (event) {
     wx.switchTab({
-      url: '../movies/movies'
+      url: '../table/table'
     });
   },
 
@@ -220,7 +206,7 @@ Page({
   // 用户点击右上角分享
   onShareAppMessage: function () {
     return {
-      title: 'e 生活',
+      title: 'FaceAttendance',
       desc: '分享个小程序，希望你喜欢☺️~',
       success: function (res) {
         // 转发成功
