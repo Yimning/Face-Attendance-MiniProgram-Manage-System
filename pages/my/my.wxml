@@ -1,51 +1,27 @@
+<!--pages/user/user.wxml-->
 <view class="container">
-	<view class="userinfo">
-		<button class="btn" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
-			获取头像昵称 </button>
-		<block wx:else>
-			<image bindtap="bindViewTap" class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-			<!--  <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
-		</block>
-	</view>
-	<view>
-		<text class="motto">{{moto}}{{userInfo.nickName}}</text>
-	</view>
+  <view class="user-header">
+    <view class="user-avatar-box">
+      <image class="user-avatar" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="user-info-box">
+      <text class="user-name">{{userInfo.nickName}}</text>
+    </view>
+    <view class="scan" bindtap="qrcode">
+      <image src="/images/user/user@active.png"></image>
+    </view>
+  </view>
 
-	<view wx:if="{{hasUserInfo && canIUse}}">
-		<view class="cp-line"></view>
-		<!--账号-->
-		<view class="inputView">
-			<image class="nameImage" src="../../images/name.png"></image>
-			<label class="loginLab">账号</label>
-			<input class="inputText" placeholder="请输入账号" bindinput="usernameInput" value="{{content}}" />
-		</view>
-		<view class="line"></view>
-		<!--密码-->
-		<view class="inputView">
-			<image class="keyImage" src="../../images/key.png"></image>
-			<label class="loginLab">密码</label>
-			<input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" value="{{content}}" />
-		</view>
-		<!-- <view class="page-section page-section-gap">
-		<label class="checkbox">
-			<checkbox value="cb" checked="true" />	<text class="journey">记住密码</text>
-		</label>
-	</view> -->
+  <view class="user-content">
+    <view wx:if="{{isMailAdmin || isExpressAdmin}}" bindtap="qrcode" class="cell-item margin-bottom">
+      <text>扫描二维码</text>
+      <image src="/images/user/enter.png"></image>
+    </view>
+    <navigator url="/pages/my/bind/bind" class="cell-item" hover-class="none">
+      <text class="text" >绑定手机号</text>
+      <image src="/images/user/enter.png">"></image>
+    </navigator>
+   
+  </view>
 
-		<view class="form">
-			<view class="journey-container" bindtap="forgetTap">
-				<text class="journey">忘记密码</text>
-			</view>
-			<view class="journey-container">
-				<view bindtap="clearTap">
-					<text class="journey">重置</text>
-				</view>
-			</view>
-			<view class="journey-container">
-				<view bindtap="login">
-					<text class="journey">登录</text>
-				</view>
-			</view>
-		</view>
-	</view>
 </view>

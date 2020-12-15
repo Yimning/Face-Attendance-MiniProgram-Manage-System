@@ -1,116 +1,52 @@
-.container{
+/* pages/user/user.wxss */
+.user-header {
     display: flex;
-    flex-direction:column;
     align-items: center;
-    background-color:#b3d4db;
-}
-/* .container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-  
-}  */
-.btn{
-  margin-top:160rpx;
-  background-color:#b3d4db;
-}
-
-.avatar{
-    width:200rpx;
-    height:200rpx;
-    margin-top:160rpx;
-}
-
-.motto{
-    margin-top:100rpx;
-    font-size:32rpx;
-    font-weight: bold;
-}
-
-.journey-container{
-    margin-top: 30rpx;
-    border: 1px solid #405f80;
-    width: 150rpx;
-    height: 80rpx;
-    border-radius: 5px;
-    text-align:center;
-    margin-right: 10px;
-}
-
-.journey{
-    font-size:35rpx;
-    font-weight: bold;
-    line-height:80rpx;
-    color: #405f80;
-}
-   /*表单内容*/
-   .form{
-    display: flex;
-    flex-direction:row;
-    justify-content:space-around;
+    background: #eeeeee;
+    color: #fff;
+    height: 250rpx;
+    font-size: 14pt;
   }
-  
-   .inputView { 
-    /* background-color: #fff;  */
-    line-height: 45px; 
-    border-radius:20px;
-     border:1px solid #fdfdfd;
-   } 
-    
-   /*输入框*/
-   .nameImage, .keyImage { 
-    margin-left: 22px; 
-    width: 18px; 
-    height: 16px
-   } 
-    
-   .loginLab { 
-    margin: 15px 15px 15px 10px; 
-    color: #545454; 
-    font-size: 14px
-   } 
-    
-   .inputText { 
-    flex: block; 
-    float: right; 
-    /* text-align: right;  */
-    margin-right: 22px; 
-    margin-top: 11px;
-    color: #070000; 
-    font-size: 14px
-   } 
-   .line { 
-    margin-top: 10px; 
-   } 
-   .cp-line { 
-    margin-top: 20px; 
-   }   
-
-   /*按钮*/
-   .loginBtnView { 
-    width: 100%; 
-    height: auto; 
-    /* background-color:#DCDCDC;  */
-    margin-top: 0px; 
-    margin-bottom: 0px; 
-    padding-bottom: 0px; 
-   } 
-    
-   .loginBtn { 
-    width: 90%; 
-    margin-top: 40px; 
-    border-radius:10px;
-   }
-
-
-
-
-
-page{
+  .user-avatar-box {
+    width: 300rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .user-avatar {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+  }
+  .user-info-box {
+    flex: 1;
+    display: flex;
+    font-size: 14pt;
+    line-height: 150%;
+  }
+  .user-name {
+    font-size: 16pt;
+    flex: 1;
+  }
+  .scan {
+    opacity: .9;
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 60rpx;
+  }
+  .scan image{
+    width: 100%;
     height: 100%;
-    background-color:#b3d4db;
-}
+  }
+  .user-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 30rpx 0;
+  }
+  /*文字*/
+.text {
+    display: inline-block;
+    font-size: 11pt;
+    margin: 10rpx;
+  }
