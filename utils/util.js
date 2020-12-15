@@ -15,6 +15,9 @@ const cityObjs = [{ "id": "35", "provincecode": "150000", "city": "阿拉善盟"
 //城市检索的首字母
 var searchLetter = ["A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "W", "X", "Y", "Z"]
 
+const weekArr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+
+
 //对城市信息进行分组
 function cityList() {
   let tempArr = [];
@@ -78,7 +81,7 @@ function GetRequest(url, data, callBackRes, callBackError) {
     method: 'GET',
     data: data,
     header: {
-      "content-type":'application/json'
+      "content-type": 'application/json'
     },
     success: function (res) {
       callBackRes(res);
@@ -137,6 +140,7 @@ const formatTime = date => {
   const hour = date.getHours()
   const minute = date.getMinutes()
   const second = date.getSeconds()
+  const weekIndex = date.getDay()
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
@@ -144,6 +148,43 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+
+//根据当前的日期显示当前是星期几
+function DateToWeek(dateStr) {
+  if (dateStr != null || dateStr == '') {
+    let date = new Date(dateStr);
+    let weekIndex = date.getDay();
+    return weekArr[weekIndex];
+  } else return null;
+}
+
+//根据当前的日期显示当前是星期几的索引
+function DateToWeekIndex(dateStr) {
+  if (dateStr != null || dateStr == '') {
+    let date = new Date(dateStr);
+    let weekIndex = date.getDay();
+    return weekIndex;
+  } else return null;
+}
+
+function getUserInfo() {
+  /* 必须调用wx.getStorageSync()的方法才可以实现同步，
+     若用wx.getStorage()为异步请求，在success是回调函数,触发时间最晚，无法修改数据
+  */
+  try {
+    var value = wx.getStorageSync('userInfo')
+    if (value) {
+      // Do something with return value
+     var userInfo = wx.getStorageSync('userInfo')
+     return userInfo;
+    }
+  } catch (e) {
+    // Do something when catch error
+  }
+}
+
+
+
 
 
 module.exports = {
@@ -157,6 +198,9 @@ module.exports = {
   PostRequest: PostRequest,
   convertToCastString: convertToCastString,
   convertToCastInfos: convertToCastInfos,
+  DateToWeek: DateToWeek,
+  DateToWeekIndex: DateToWeekIndex,
+  getUserInfo:getUserInfo,
   timest: timest,
 }
 
