@@ -1,22 +1,22 @@
 <view class='imagetext'>
   <view class="{{selsectState[0]?'newsSelected':''}}" bindtap='clickNation'>
-    <image class="icon-image" src="../../../images/report.png"/>
+    <image class="icon-image" src="../../../images/more/report.png"/>
     <view class='tabText'>国际</view>   
   </view>
   <view class="{{selsectState[1]?'newsSelected':''}}" bindtap='clickSport'>
-    <image class="icon-image" src="../../../images/tiyu.png"/>
+    <image class="icon-image" src="../../../images/more/tiyu.png"/>
     <view class='tabText'>体育</view>
   </view>
   <view class="{{selsectState[2]?'newsSelected':''}}" bindtap='clickScience'>
-    <image class="icon-image" src="../../../images/keji.png"/>
+    <image class="icon-image" src="../../../images/more/keji.png"/>
     <view class='tabText'>科技</view>
   </view>
   <view class="{{selsectState[3]?'newsSelected':''}}" bindtap='clickHappy'>
-    <image class="icon-image" src="../../../images/yule.png"/>
+    <image class="icon-image" src="../../../images/more/yule.png"/>
     <view class='tabText'>社会</view>
   </view>
   <view class="{{selsectState[4]?'newsSelected':''}}" bindtap='clickFinance'>
-    <image class="icon-image" src="../../../images/purse.png"/>
+    <image class="icon-image" src="../../../images/more/purse.png"/>
     <view class='tabText'>财经</view>
   </view>
 </view>

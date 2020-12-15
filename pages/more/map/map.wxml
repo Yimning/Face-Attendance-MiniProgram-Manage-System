@@ -1,14 +1,14 @@
 <view class='mapTab'>
   <view class="{{selsectState[0]?'mapSelected':''}}" bindtap='clickHotel'>
-    <image class="icon-image" src="../../../images/hotel.png"/>
+    <image class="icon-image" src="../../../images/more/hotel.png"/>
     <view class='tabText'>附近</view>   
   </view>
   <view class="{{selsectState[1]?'mapSelected':''}}" bindtap='clickFood'>
-    <image class="icon-image" src="../../../images/food.png"/>
+    <image class="icon-image" src="../../../images/more/food.png"/>
     <view class='tabText'>美食</view>
   </view>
   <view class="{{selsectState[2]?'mapSelected':''}}" bindtap='clickService'>
-    <image class="icon-image" src="../../../images/service.png"/>
+    <image class="icon-image" src="../../../images/more/service.png"/>
     <view class='tabText'>服务</view>
   </view>
 </view>

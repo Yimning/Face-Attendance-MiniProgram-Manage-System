@@ -25,7 +25,7 @@
             <view class="weui-item__desc">Reading</view>
           </view>
           <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/lib.png" />
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/more/lib.png" />
           </view>
         </view>
       </view>
@@ -41,7 +41,7 @@
             <view class="weui-item__desc">Near</view>
           </view>
           <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/near.png" />
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/more/near.png" />
           </view>
         </view>
       </view>
