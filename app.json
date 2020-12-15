@@ -1,15 +1,20 @@
 {
-  "pages": [   "pages/table/table",  
+  "pages": [     "pages/my/my",
     "pages/welcome/welcome",
-    "pages/index/index",
-    "pages/my/my",
+    "pages/index/index", 
+    "pages/table/table", 
+    "pages/more/more", 
+ 
     "pages/weather/weather",
     "pages/switchcity/switchcity",
-    "pages/news/news",
-    "pages/map/map",
+    "pages/more/news/news",
+    "pages/more/map/map",
+    "pages/my/bind/bind",
     "pages/logs/logs",
-    "pages/more/more",
-    "pages/news/content/content"
+    "pages/more/more/more",
+    "pages/more/about/about",
+    "pages/more/help/help",
+    "pages/more/news/content/content"
   ],
 
   "window": {
@@ -26,24 +31,29 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "images/souye.png",
+        "selectedIconPath": "images/souye1.png"
       },
 
       {
         "pagePath": "pages/table/table",
-        "text": "课程表"
+        "text": "课程表",
+        "iconPath": "images/table.png",
+        "selectedIconPath": "images/today_icon.png"
       },
-      {
-        "pagePath": "pages/news/news",
-        "text": "阅读"
-      },
-      {
-        "pagePath": "pages/map/map",
-        "text": "附近"
-      },
+
       {
         "pagePath": "pages/more/more",
-        "text": "更多"
+        "text": "更多",
+        "iconPath": "images/tianjia1.png",
+        "selectedIconPath": "images/tianjia.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/account.png",
+        "selectedIconPath": "images/account_.png"
       }
     ]
   },
