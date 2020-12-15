@@ -1,0 +1,10 @@
+/* pages/user/bind.wxss */
+.container {
+    padding: 30rpx 0;
+}
+  /*文字*/
+  .text {
+    display: inline-block;
+    font-size: 11pt;
+    margin: 10rpx;
+  }
