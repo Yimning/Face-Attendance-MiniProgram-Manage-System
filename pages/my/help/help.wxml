@@ -1,0 +1,50 @@
+<view class="page__hd">
+  <image class="weui-media-box__thumb" src="/images/help_icon.png" />
+  <view class="page__title">使用帮助</view>
+  <view class="page__desc">恭喜你发现珍藏多年的葵花宝典</view>
+</view>
+<view class="page__bd">
+  <view class="weui-article">
+    <view class="weui-article__h1" style="color:#43B0D1;">1. 如何更方便的使用FaceAttendance?</view>
+    <view class="weui-article__section">
+      <view class="weui-article__section">
+        <view class="weui-article__h3">1.1 获取每日课程</view>
+        <view class="weui-article__p">
+         在首页可以发现，以后每节课之前都会当天查询要上的课程。
+        </view>
+      </view>
+    </view>
+    <view class="weui-article__h1" style="color:#43B0D1;">2. 如何转发分享给朋友?</view>
+    <view class="weui-article__section">
+      <view class="weui-article__section">
+        <view class="weui-article__p">
+          在FaceAttendance中，几乎每个页面都有转发分享按钮，点击即可转发分享。也可点击右上角「···」，点击转发，即可转发分享。
+        </view>
+      </view>
+    </view>
+    <view class="weui-article__h1" style="color:#43B0D1;">3. 如何找到FaceAttendance?</view>
+    <view class="weui-article__section">
+      <view class="weui-article__section">
+        <view class="weui-article__h3">3.1 通过微信打开</view>
+        <view class="weui-article__p">
+          进入微信界面，点击底部导航栏中的发现，点击小程序，找到FaceAttendance即可打开
+        </view>
+      </view>
+      <view class="weui-article__section">
+        <view class="weui-article__h3">3.2 通过搜索打开</view>
+        <view class="weui-article__p">
+          进入微信界面，点击右上角搜索图标，输入FaceAttendance即可打开
+        </view>
+      </view>
+      <view class="weui-article__section">
+        <view class="weui-article__h3"></view>
+        <view class="weui-article__p">
+        <text>（AppID：wx97042167b77e366e）</text>
+        </view>
+      </view>
+    </view>
+  </view>
+      <view class="button-sp-area">
+        <button open-type="share" class="weui-btn" type="primary" plain="true">分享小程序</button>
+      </view>
+</view>
