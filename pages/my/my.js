@@ -9,9 +9,8 @@ Page({
   },
   onLoad:function(options){
     var that = this;
-    console.log(app.globalData.userInfo)
     that.setData({
-      userInfo: app.globalData.userInfo,
+      userInfo: util.getUserInfo(),
       // isMailAdmin: app._g.role.isMailAdmin,
       // isExpressAdmin: app._g.role.isExpressAdmin
     });

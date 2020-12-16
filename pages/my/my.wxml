@@ -2,13 +2,13 @@
 <view class="container">
   <view class="user-header">
     <view class="user-avatar-box">
-      <image class="user-avatar" src="{{userInfo.avatarUrl}}"></image>
+      <image class="user-avatar" src="{{userInfo.avatar}}"></image>
     </view>
     <view class="user-info-box">
-      <text class="user-name">{{userInfo.nickName}}</text>
+      <text class="user-name">{{userInfo.userName}}</text>
     </view>
     <view class="scan" bindtap="qrcode">
-      <image src="/images/user/user@active.png"></image>
+      <image src="/images/icon/userd.png"></image>
     </view>
   </view>
 
@@ -17,11 +17,14 @@
       <text>扫描二维码</text>
       <image src="/images/user/enter.png"></image>
     </view>
-    <navigator url="/pages/my/bind/bind" class="cell-item" hover-class="none">
-      <text class="text" >绑定手机号</text>
+    <navigator url="/pages/my/myinfo/info" class="cell-item" hover-class="none">
+      <text class="text">个人信息</text>
       <image src="/images/user/enter.png">"></image>
     </navigator>
-   
+    <navigator url="/pages/my/bind/bind" class="cell-item" hover-class="none">
+      <text class="text">绑定手机号</text>
+      <image src="/images/user/enter.png">"></image>
+    </navigator>
   </view>
 
 </view>

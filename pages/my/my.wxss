@@ -27,6 +27,7 @@
   .user-name {
     font-size: 16pt;
     flex: 1;
+    color: #000;
   }
   .scan {
     opacity: .9;
