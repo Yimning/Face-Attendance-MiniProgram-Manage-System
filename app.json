@@ -1,19 +1,24 @@
 {
-  "pages": [     "pages/my/my",
+  "pages": [   
+  "pages/my/my",
     "pages/welcome/welcome",
     "pages/index/index", 
     "pages/table/table", 
     "pages/more/more", 
- 
+  
     "pages/weather/weather",
     "pages/switchcity/switchcity",
     "pages/more/news/news",
     "pages/more/map/map",
     "pages/my/bind/bind",
+    "pages/my/myinfo/info",   
+    "pages/my/changePassword/changePassword",  
+    "pages/my/help/help", 
+    "pages/my/about/about", 
     "pages/logs/logs",
     "pages/more/more/more",
-    "pages/more/about/about",
-    "pages/more/help/help",
+    "pages/more/attendance/attendance",
+    "pages/more/notice/notice",
     "pages/more/news/content/content"
   ],
 

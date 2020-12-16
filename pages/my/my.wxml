@@ -1,30 +1,43 @@
 <!--pages/user/user.wxml-->
 <view class="container">
-  <view class="user-header">
+  <view class="user-header" bindtap="qrcode">
     <view class="user-avatar-box">
       <image class="user-avatar" src="{{userInfo.avatar}}"></image>
     </view>
     <view class="user-info-box">
       <text class="user-name">{{userInfo.userName}}</text>
     </view>
-    <view class="scan" bindtap="qrcode">
+    <view class="scan">
       <image src="/images/icon/userd.png"></image>
     </view>
   </view>
 
   <view class="user-content">
-    <view wx:if="{{isMailAdmin || isExpressAdmin}}" bindtap="qrcode" class="cell-item margin-bottom">
-      <text>扫描二维码</text>
-      <image src="/images/user/enter.png"></image>
-    </view>
     <navigator url="/pages/my/myinfo/info" class="cell-item" hover-class="none">
       <text class="text">个人信息</text>
+      <image src="/images/user/enter.png">"></image>
+    </navigator>
+    <navigator url="/pages/my/changePassword/changePassword" class="cell-item" hover-class="none">
+      <text class="text">重置密码</text>
       <image src="/images/user/enter.png">"></image>
     </navigator>
     <navigator url="/pages/my/bind/bind" class="cell-item" hover-class="none">
       <text class="text">绑定手机号</text>
       <image src="/images/user/enter.png">"></image>
     </navigator>
+    <navigator url="/pages/my/help/help" class="cell-item" hover-class="none">
+      <text class="text">使用帮助</text>
+      <image src="/images/user/enter.png">"></image>
+    </navigator>
+    <navigator url="/pages/my/about/about" class="cell-item" hover-class="none">
+      <text class="text">关于我们</text>
+      <image src="/images/user/enter.png">"></image>
+    </navigator>
+
+    <view class="cell-item" hover-class="none" bindtap='exit'>
+      <text class="text">退出登录</text>
+      <image src="/images/user/enter.png">"></image>
+    </view>
   </view>
 
 </view>

@@ -2,30 +2,58 @@
 var app = getApp();
 var util = require('../../utils/util.js');
 Page({
-  data:{
+  data: {
     isMailAdmin: false,
     isExpressAdmin: false,
     userInfo: {}
   },
-  onLoad:function(options){
+  onLoad: function (options) {
     var that = this;
     that.setData({
       userInfo: util.getUserInfo(),
-      // isMailAdmin: app._g.role.isMailAdmin,
-      // isExpressAdmin: app._g.role.isExpressAdmin
     });
   },
-  qrcode: app.qrcode,
-  onReady:function(){
+  onReady: function () {
     // 页面渲染完成
   },
-  onShow:function(){
+  onShow: function () {
     // 页面显示
   },
-  onHide:function(){
+  onHide: function () {
     // 页面隐藏
   },
-  onUnload:function(){
+  onUnload: function () {
     // 页面关闭
-  }
+  },
+  qrcode: function () {
+    //页面跳转
+    wx.redirectTo({
+      url: '/pages/my/myinfo/info',
+    })
+  },
+  exit: function (e) {
+    wx.showModal({
+      title: '提示',
+      content: '是否确认退出',
+      success: function (res) {
+        if (res.confirm) {
+          // console.log('用户点击确定')
+          wx.removeStorageSync('userInfo');
+          wx.clearStorage();
+          wx.clearStorage();
+          wx.setStorage({
+            data: null,
+            key: 'userInfo',
+          })
+          //页面跳转
+          wx.reLaunch({
+            url: '../../../pages/welcome/welcome',
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+
 })

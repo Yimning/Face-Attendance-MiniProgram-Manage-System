@@ -19,6 +19,8 @@ Page({
     })
   },
   onLoad: function () {
+    wx.removeStorageSync('userInfo');
+    wx.clearStorage()
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -134,12 +136,6 @@ Page({
       wx.setStorage({
         data: res.data.data,
         key: 'userInfo',
-      })
-      wx.getStorage({
-        key: 'userInfo',
-        success (res) {
-          //console.log(res.data)
-        }
       })
     } else {
       wx.showToast({
