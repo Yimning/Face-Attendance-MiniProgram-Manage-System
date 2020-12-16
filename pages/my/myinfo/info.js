@@ -9,11 +9,9 @@ Page({
     // onPullDownRefresh: function () {
     //   wx.stopPullDownRefresh()
     // },
-    myinfo: {
-      face: ''
-    },
+    myinfo: {},
     isStudent: true,
-
+    paramJson: '',
   },
 
   /**
@@ -22,19 +20,18 @@ Page({
   onLoad: function (options) {
     var userInfo = wx.getStorageSync('userInfo');
     this.setData({ myinfo: userInfo });
-    console.log(userInfo);
     if (util.getUserInfo().roseID == '0') {
       this.url = app.globalData.globalRequestUrl + "/student/findStudentByID";
       this.data.paramJson = {
         id: util.getUserInfo().userID,
-        isStudent:true
+        isStudent: true
       };
     }
     if (util.getUserInfo().roseID == '1') {
       this.url = app.globalData.globalRequestUrl + "/teacher/findTeacherByID";
       this.data.paramJson = {
         id: util.getUserInfo().userID,
-        isStudent:false
+        isStudent: false
       };
     }
     //获取个人信息
@@ -63,10 +60,16 @@ Page({
       success: function (res) {
         if (res.confirm) {
           // console.log('用户点击确定')
-          wx.removeStorageSync('student');
+          wx.removeStorageSync('userInfo');
+          wx.clearStorage();
+          wx.clearStorage();
+          wx.setStorage({
+            data: null,
+            key: 'userInfo',
+          })
           //页面跳转
-          wx.redirectTo({
-            url: '../login/login',
+          wx.reLaunch({
+            url: '../../../pages/welcome/welcome',
           })
         } else if (res.cancel) {
           console.log('用户点击取消')
@@ -77,7 +80,7 @@ Page({
   resetpwd: function (e) {
     var no = this.data.myinfo.no;
     wx.navigateTo({
-      url: '../password/password?no=' + no,
+      url: '../changePassword/changePassword',
     })
   },
   setemail: function (e) {

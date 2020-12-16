@@ -38,7 +38,7 @@
     <text class='left'> 密码：</text><text class='right'>点击重置</text>
   </view>
   <view class='item' bindtap='exit'>
-    <text class='left'>退出：</text><text class='right'>>>></text>
+    <text class='left'>退出：</text><text class='right'>></text>
   </view>
 </view>
 
@@ -71,7 +71,7 @@
   <view class='item'>
     <text class='left'>专业：</text><text class='right'>{{myinfo.profession}}</text>
   </view>
-  <view class='item' bindtap='setemail'>
+  <view class='item'>
     <text class='left'> 入学年份:</text><text class='right'
       wx:if="{{myinfo.joinTime==''|| myinfo.joinTime==null}}">null</text><text class='right'
       wx:else>{{myinfo.joinTime}}</text>
@@ -80,6 +80,6 @@
     <text class='left'> 密码：</text><text class='right'>点击重置</text>
   </view>
   <view class='item' bindtap='exit'>
-    <text class='left'>退出：</text><text class='right'>>>></text>
+    <text class='left'>退出：</text><text class='right'>></text>
   </view>
 </view>

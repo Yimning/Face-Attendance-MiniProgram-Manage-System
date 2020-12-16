@@ -1,6 +1,8 @@
 /* pages/myinfo/myinfo.wxss */
+/* page{background-color:#EEEEEE;} */
 .nav{
   background-color: #fff;
+  color: #fff;
 }
 .top{
 width: 250rpx;
@@ -30,8 +32,6 @@ flex-grow: 1;
 color: #ccc;
 margin-right: 20rpx;
 }
-
-
 
 .userinfo {
   position: relative;
