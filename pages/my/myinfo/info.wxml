@@ -1,0 +1,85 @@
+<!--pages/myinfo/myinfo.wxml-->
+<!-- <text>pages/myinfo/myinfo.wxml</text> -->
+<view class='content' wx:if="{{isStudent}}">
+  <view class='nav'>
+    <view class='top' bindtap='preview' data-src='{{myinfo.face}}'>
+      <view wx:if="{{myinfo.face==null||myinfo.face==''}}">
+        <image class="userinfo-avatar" src="../../../images/user/user.png"></image>
+      </view>
+      <view wx:else>
+        <image class="userinfo-avatar" src="{{myinfo.face}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class='item'>
+    <text class='left'>学号：</text><text class='right'>{{myinfo.studentNumber}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'>姓名：</text><text class='right'>{{myinfo.studentName}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'> 性别：</text><text class='right'>{{myinfo.studentSex}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'> 出生年月日：</text><text class='right'>{{myinfo.studentBirth}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'> 班级号：</text><text class='right'>{{myinfo.studentClass}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'>专业：</text><text class='right'>{{myinfo.profession}}</text>
+  </view>
+  <view class='item' bindtap='setemail'>
+    <text class='left'> 入学年份:</text><text class='right'
+      wx:if="{{myinfo.joinTime==''|| myinfo.joinTime==null}}">null</text><text class='right'
+      wx:else>{{myinfo.joinTime}}</text>
+  </view>
+  <view class='item' bindtap='resetpwd'>
+    <text class='left'> 密码：</text><text class='right'>点击重置</text>
+  </view>
+  <view class='item' bindtap='exit'>
+    <text class='left'>退出：</text><text class='right'>>>></text>
+  </view>
+</view>
+
+<view class='content' wx:else>
+  <view class='nav'>
+    <view class='top' bindtap='preview' data-src='{{myinfo.face}}'>
+      <view wx:if="{{myinfo.face==null||myinfo.face==''}}">
+        <image class="userinfo-avatar" src="../../../images/user/user.png"></image>
+      </view>
+      <view wx:else>
+        <image class="userinfo-avatar" src="{{myinfo.face}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class='item'>
+    <text class='left'>学号：</text><text class='right'>{{myinfo.studentNumber}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'>姓名：</text><text class='right'>{{myinfo.studentName}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'> 性别：</text><text class='right'>{{myinfo.studentSex}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'> 出生年月日：</text><text class='right'>{{myinfo.studentBirth}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'> 班级号：</text><text class='right'>{{myinfo.studentClass}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'>专业：</text><text class='right'>{{myinfo.profession}}</text>
+  </view>
+  <view class='item' bindtap='setemail'>
+    <text class='left'> 入学年份:</text><text class='right'
+      wx:if="{{myinfo.joinTime==''|| myinfo.joinTime==null}}">null</text><text class='right'
+      wx:else>{{myinfo.joinTime}}</text>
+  </view>
+  <view class='item' bindtap='resetpwd'>
+    <text class='left'> 密码：</text><text class='right'>点击重置</text>
+  </view>
+  <view class='item' bindtap='exit'>
+    <text class='left'>退出：</text><text class='right'>>>></text>
+  </view>
+</view>
