@@ -1,76 +1,11 @@
 <view class="circle">
   <view class="page__hd">
-    <!-- <navigator url="/pages/search/id/index" hover-class="none">
+    <navigator url="/pages/more/attendance/attendance" hover-class="none">
       <view class="weui-item border-shadow background-2">
         <view class="weui-flex">
           <view class="weui-flex__item">
             <view class="weui-item__title">
-              学号查询
-            </view>
-            <view class="weui-item__desc">Student ID Inquiry</view>
-          </view>
-          <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/search_icon.png" />
-          </view>
-        </view>
-      </view>
-    </navigator> -->
-    <navigator url="/pages/more/news/news" hover-class="none">
-      <view class="weui-item border-shadow background-1">
-        <view class="weui-flex">
-          <view class="weui-flex__item">
-            <view class="weui-item__title">
-              阅读
-            </view>
-            <view class="weui-item__desc">Reading</view>
-          </view>
-          <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/more/lib.png" />
-          </view>
-        </view>
-      </view>
-    </navigator>
-
-    <navigator url="/pages/more/map/map" hover-class="none">
-      <view class="weui-item border-shadow background-2">
-        <view class="weui-flex">
-          <view class="weui-flex__item">
-            <view class="weui-item__title">
-              发现周边
-            </view>
-            <view class="weui-item__desc">Near</view>
-          </view>
-          <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;" src="/images/more/near.png" />
-          </view>
-        </view>
-      </view>
-    </navigator>
-
-    <navigator url="/pages/more/more/more" hover-class="none">
-      <view class="weui-item border-shadow background-1">
-        <view class="weui-flex">
-          <view class="weui-flex__item">
-            <view class="weui-item__title">
-              更多
-            </view>
-            <view class="weui-item__desc">More</view>
-          </view>
-          <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
-              src="/images/search_icon.png" />
-          </view>
-        </view>
-      </view>
-    </navigator>
-
-
-    <navigator url="/pages/more/help/help" hover-class="none">
-      <view class="weui-item border-shadow background-2">
-        <view class="weui-flex">
-          <view class="weui-flex__item">
-            <view class="weui-item__title">
-              使用帮助
+              考勤记录
             </view>
             <view class="weui-item__desc">Instructions</view>
           </view>
@@ -115,6 +50,57 @@
         </view>
       </view>
     </button>
+    <navigator url="/pages/more/news/news" hover-class="none">
+      <view class="weui-item border-shadow background-1">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="weui-item__title">
+              阅读
+            </view>
+            <view class="weui-item__desc">Reading</view>
+          </view>
+          <view class="weui-flex__item">
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
+              src="/images/more/lib.png" />
+          </view>
+        </view>
+      </view>
+    </navigator>
+
+    <navigator url="/pages/more/map/map" hover-class="none">
+      <view class="weui-item border-shadow background-2">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="weui-item__title">
+              发现周边
+            </view>
+            <view class="weui-item__desc">Near</view>
+          </view>
+          <view class="weui-flex__item">
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
+              src="/images/more/near.png" />
+          </view>
+        </view>
+      </view>
+    </navigator>
+
+    <navigator url="/pages/more/more/more" hover-class="none">
+      <view class="weui-item border-shadow background-1">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="weui-item__title">
+              更多
+            </view>
+            <view class="weui-item__desc">More</view>
+          </view>
+          <view class="weui-flex__item">
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
+              src="/images/search_icon.png" />
+          </view>
+        </view>
+      </view>
+    </navigator>
+
     <navigator url="/pages/more/about/about" hover-class="none">
       <view class="weui-item border-shadow background-1">
         <view class="weui-flex">

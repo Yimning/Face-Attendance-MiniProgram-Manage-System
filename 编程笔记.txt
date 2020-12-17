@@ -1,0 +1,34 @@
+一、数据处理
+    1、对象转成数组方式一(数组里面是一个个number类型的元素)
+    let dictObject= { 
+                    '未开工': 9, 
+                    '已开工': 8, 
+                    '进行中': 7, 
+                    '已完成': 6, 
+                  };
+
+        // 对象转成数组方式一
+        var createArr = []
+        for (let i in dictObject) {
+          createArr.push(dictObject[i]); 
+        }
+        console.log(createArr);
+     
+
+    2、对象转成数组方式二(数组里面是一个个字典类型的元素)
+    let dictObject= { 
+                    '未开工': 9, 
+                    '已开工': 8, 
+                    '进行中': 7, 
+                    '已完成': 6, 
+                  };
+        // 对象转成数组方式二
+        var arr = []
+        for (let key in dictObject) {
+          // 每遍历一次，就创建一个字典对象
+          let dict = {};
+          // key分别为未开工、已开工、进行中、已完成。不是0，1，2,3
+          dict[key] = dictObject[key];
+          arr.push(dict);
+        }
+        console.log(arr);

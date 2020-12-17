@@ -45,8 +45,6 @@ Page({
         wx.setStorageSync('userInfos', userInfos);
       }
     })
-    console.log("FGHFG");
-    console.log(util.getUserInfo());
     if (util.getUserInfo().roseID == '0') {
       this.url = app.globalData.globalRequestUrl + "/scourse/findScourseBysIDcIDcD";
       this.data.paramJson = {

@@ -1,11 +1,11 @@
 {
   "pages": [   
-  "pages/my/my",
+    "pages/more/attendance/attendance",
     "pages/welcome/welcome",
     "pages/index/index", 
     "pages/table/table", 
     "pages/more/more", 
-  
+    "pages/my/my",
     "pages/weather/weather",
     "pages/switchcity/switchcity",
     "pages/more/news/news",
@@ -17,7 +17,8 @@
     "pages/my/about/about", 
     "pages/logs/logs",
     "pages/more/more/more",
-    "pages/more/attendance/attendance",
+
+    "pages/more/form/form",
     "pages/more/notice/notice",
     "pages/more/news/content/content"
   ],

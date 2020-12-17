@@ -17,6 +17,36 @@ var searchLetter = ["A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", 
 
 const weekArr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
 
+const weeks = [
+  {
+    "weekday": "星期日",
+    "id": "0"
+  },
+  {
+    "weekday": "星期一",
+    "id": "1"
+  },
+  {
+    "weekday": "星期二",
+    "id": "2"
+  },
+  {
+    "weekday": "星期三",
+    "id": "3"
+  },
+  {
+    "weekday": "星期四",
+    "id": "4"
+  },
+  {
+    "weekday": "星期五",
+    "id": "5"
+  },
+  {
+    "weekday": "星期六",
+    "id": "6"
+
+  }]
 
 //对城市信息进行分组
 function cityList() {
@@ -175,14 +205,22 @@ function getUserInfo() {
     var value = wx.getStorageSync('userInfo')
     if (value) {
       // Do something with return value
-     var userInfo = wx.getStorageSync('userInfo')
-     return userInfo;
+      var userInfo = wx.getStorageSync('userInfo')
+      return userInfo;
     }
   } catch (e) {
     // Do something when catch error
   }
 }
 
+//对象转化为数组
+function objectToArray(object) {
+  var createArr = []
+  for (var index in object) {
+    createArr.push(object[index]);
+  }
+  return createArr;
+}
 
 
 
@@ -200,7 +238,9 @@ module.exports = {
   convertToCastInfos: convertToCastInfos,
   DateToWeek: DateToWeek,
   DateToWeekIndex: DateToWeekIndex,
-  getUserInfo:getUserInfo,
+  getUserInfo: getUserInfo,
+  objectToArray:objectToArray,
   timest: timest,
+  weeks: weeks,
 }
 
