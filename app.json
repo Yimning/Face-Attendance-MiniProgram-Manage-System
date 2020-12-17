@@ -17,7 +17,7 @@
     "pages/my/about/about", 
     "pages/logs/logs",
     "pages/more/more/more",
-
+    "pages/default/default",
     "pages/more/form/form",
     "pages/more/notice/notice",
     "pages/more/news/content/content"
