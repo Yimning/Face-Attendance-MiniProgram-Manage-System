@@ -16,6 +16,7 @@ Page({
     attendanceUrl: '',
     attendanceParams: {},
     attendanceInfo: [],
+    attendanceInfoSelect: [],
     courseInfoArry: [
       {
         "courseID": '',
