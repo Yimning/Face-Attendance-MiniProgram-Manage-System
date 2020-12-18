@@ -112,7 +112,7 @@
                     <view class="name">{{item.course.courseID}}-{{item.course.courseName}}</view>
                     <view class="date">{{item.recordTime}} {{item.weekDay}}</view>
                 </view>
-                <view class="tixing2" data-courseInfo="{{item}}" bindtap="noFlagTap">
+                <view class="tixing2" data-courseInfo="{{item}}" bindtap="bindViewTap">
                     <image class="tixingimg" src="../../../images/more/zuoye.png"></image>
                     <view class="tixingz1">查看出勤率</view>
                 </view>
@@ -123,7 +123,7 @@
                     <view class="name">{{item.course.courseID}}-{{item.course.courseName}}</view>
                     <view class="date">{{item.recordTime}} {{item.weekDay}}</view>
                 </view>
-                <view class="tixing2" data-courseInfo="{{item}}" bindtap="isFlagTap">
+                <view class="tixing2" data-courseInfo="{{item}}" bindtap="noFlagTap">
                     <image class="tixingimg" src="../../../images/more/zuoye.png"></image>
                     <view class="tixingz1">记缺</view>
                 </view>

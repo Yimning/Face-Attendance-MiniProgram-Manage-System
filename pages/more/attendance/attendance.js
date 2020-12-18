@@ -233,35 +233,101 @@ Page({
   },
   //补签
   isFlagTap: function (e) {
-    console.log(e.currentTarget.dataset.courseinfo);
-    const url = '/api/attendance/updateAttendanceInfo';
-    this.data.paramJson = {
-      recordID: e.currentTarget.dataset.courseinfo.recordID,
-      studentNumber: e.currentTarget.dataset.courseinfo.studentNumber,
-      weekDay: e.currentTarget.dataset.courseinfo.weekDay,
-      flag: e.currentTarget.dataset.courseinfo.flag,
-      courseID: e.currentTarget.dataset.courseinfo.courseID
-    };
-    this.updateAttendance(url, this.data.paramJson);
+    //console.log(e.currentTarget.dataset.courseinfo);
+    const that = this;
+    const url = app.globalData.globalRequestUrl + '/attendance/updateAttendanceInfo';
+    this.setData({
+      paramJson: {
+        recordID: e.currentTarget.dataset.courseinfo.recordID,
+        studentNumber: e.currentTarget.dataset.courseinfo.studentNumber,
+        weekDay: e.currentTarget.dataset.courseinfo.weekDay,
+        flag: e.currentTarget.dataset.courseinfo.flag,
+        courseID: e.currentTarget.dataset.courseinfo.courseID,
+        recordTime: e.currentTarget.dataset.courseinfo.recordTime
+      }
+    });
+    wx.showModal({
+      title: '提示',
+      content: '是否确认操作',
+      success: function (res) {
+        if (res.confirm) {
+          // console.log('用户点击确定')
+          that.updateAttendance(url, that.data.paramJson);
+        } else if (res.cancel) {
+          wx.showToast({
+            title: '已取消',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      }
+    })
   },
-  //记却
-  noFlagTap() {
-    const url = '/api/attendance/updateAttendanceInfo1';
-    this.data.paramJson = {
-      recordID: e.currentTarget.dataset.courseinfo.recordID,
-      studentNumber: e.currentTarget.dataset.courseinfo.studentNumber,
-      weekDay: e.currentTarget.dataset.courseinfo.weekDay,
-      flag: e.currentTarget.dataset.courseinfo.flag,
-      courseID: e.currentTarget.dataset.courseinfo.courseID
-    };
-    this.updateAttendance(url, this.data.paramJson);
-
+  //记缺
+  noFlagTap: function (e) {
+    const that = this;
+    const url = app.globalData.globalRequestUrl + '/attendance/updateAttendanceInfo1';
+    this.setData({
+      paramJson: {
+        recordID: e.currentTarget.dataset.courseinfo.recordID,
+        studentNumber: e.currentTarget.dataset.courseinfo.studentNumber,
+        weekDay: e.currentTarget.dataset.courseinfo.weekDay,
+        flag: e.currentTarget.dataset.courseinfo.flag,
+        courseID: e.currentTarget.dataset.courseinfo.courseID,
+        recordTime: e.currentTarget.dataset.courseinfo.recordTime
+      }
+    });
+    wx.showModal({
+      title: '提示',
+      content: '是否确认操作',
+      success: function (res) {
+        if (res.confirm) {
+          // console.log('用户点击确定')
+          that.updateAttendance(url, that.data.paramJson);
+        } else if (res.cancel) {
+          wx.showToast({
+            title: '已取消',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      }
+    })
   },
   updateAttendance(url, param) {
+    // console.log(url, param)
     util.PostRequest(url, param, this.updateAttendanceRes, this.updateAttendanceError);
   },
-  updateAttendanceRes() { },
-  updateAttendanceError() { },
+  updateAttendanceRes: function (res) {
+    console.log(res)
+    if (res.data === 0) {
+      wx.showToast({
+        title: '更新失败',
+        icon: 'none',
+        duration: 2000
+      })
+      return;
+    }
+    if (res.data === 1) {
+      wx.showToast({
+        title: '操作成功',
+        icon: 'success',
+        duration: 2000
+      })
+      this.onLoad();   //重新加载
+    }
+    if (res.data === 2) {
+      wx.showToast({
+        title: '已重复',
+        icon: 'none',
+        duration: 2000
+      })
+      return;
+    };
+  },
+  updateAttendanceError: function (res) {
+    console.log(res)
+  },
 
 
   objectToArray(object) {
