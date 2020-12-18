@@ -79,7 +79,7 @@ Page({
       courseID: this.data.attendanceInfoSelect.courseID,
       flag: "0",
     };
-    this.attendanceTeachertNoFlag(this.data.attendanceUrl, this.data.attendanceTeacherNoFlagParams);
+    this.attendanceTeacherNoFlag(this.data.attendanceUrl, this.data.attendanceTeacherNoFlagParams);
     this.attendanceTeacherIsFlag(this.data.attendanceUrl, this.data.attendanceTeacherIsFlagParams);
   },
   attendanceStudentNoFlag(url, param) { util.GetRequest(url, param, this.studentNoflagRes, this.studentNoflagError); },
