@@ -24,15 +24,19 @@ Page({
       this.url = app.globalData.globalRequestUrl + "/student/findStudentByID";
       this.data.paramJson = {
         id: util.getUserInfo().userID,
-        isStudent: true
       };
+      this.setData({
+        isStudent: true
+      });
     }
     if (util.getUserInfo().roseID == '1') {
       this.url = app.globalData.globalRequestUrl + "/teacher/findTeacherByID";
       this.data.paramJson = {
         id: util.getUserInfo().userID,
-        isStudent: false
       };
+      this.setData({
+        isStudent: false
+      });
     }
     //获取个人信息
     this.getcourseInfo(this.url, this.data.paramJson);
