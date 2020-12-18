@@ -1,8 +1,8 @@
 {
-  "pages": [   
+  "pages": [    "pages/index/index",  "pages/welcome/welcome",
     "pages/more/attendance/attendance",
-    "pages/welcome/welcome",
-    "pages/index/index", 
+   
+   
     "pages/table/table", 
     "pages/more/more", 
     "pages/my/my",
