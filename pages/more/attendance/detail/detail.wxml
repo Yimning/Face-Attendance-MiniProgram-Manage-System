@@ -1,32 +1,43 @@
 <!--pages/more/attendance/detail/detail.wxml-->
 <view class='content'>
   <view class='item'>
-    <text class='left'>学号：</text><text class='right'>{{myinfo.studentNumber}}</text>
+    <text class='left'>课程号：</text><text class='right'>{{attendanceInfoSelect.course.courseID}}</text>
   </view>
   <view class='item'>
-    <text class='left'>姓名：</text><text class='right'>{{myinfo.studentName}}</text>
+    <text class='left'>课程名：</text><text class='right'>{{attendanceInfoSelect.course.courseName}}</text>
   </view>
   <view class='item'>
-    <text class='left'> 性别：</text><text class='right'>{{myinfo.studentSex}}</text>
+    <text class='left'> 上课时间：</text><text
+      class='right'>每周{{weekArr[attendanceInfoSelect.course.courseDay]}}{{attendanceInfoSelect.course.courseTime}}</text>
   </view>
   <view class='item'>
-    <text class='left'> 出生年月日：</text><text class='right'>{{myinfo.studentBirth}}</text>
+    <text class='left'> 上课地点：</text><text class='right'>教室{{attendanceInfoSelect.course.classRoomID}}</text>
+  </view>
+  <view class='item' wx:if="{{attendanceInfoSelect.flag=='0'}}">
+    <text class='left'> 出勤状态：</text><text class='right'>未签</text>
+  </view>
+  <view class='item' wx:else>
+    <text class='left'> 出勤状态：</text><text class='right'>已签</text>
   </view>
   <view class='item'>
-    <text class='left'> 班级号：</text><text class='right'>{{myinfo.studentClass}}</text>
+    <text class='left'> 记录时间：</text><text class='right'>{{attendanceInfoSelect.recordTime}}
+      {{attendanceInfoSelect.weekDay}}</text>
   </view>
   <view class='item'>
-    <text class='left'>专业：</text><text class='right'>{{myinfo.profession}}</text>
+    <text class='left'>授课教师：</text><text class='right'>{{attendanceInfoSelect.teacher.teacherName}}</text>
   </view>
-  <view class='item' bindtap='setemail'>
-    <text class='left'> 入学年份:</text><text class='right'
-      wx:if="{{myinfo.joinTime==''|| myinfo.joinTime==null}}">null</text><text class='right'
-      wx:else>{{myinfo.joinTime}}</text>
+  <view class='item'>
+    <text class='left'> 出勤次数：</text><text class='right'>{{isflagStu}}</text>
   </view>
-  <view class='item' bindtap='resetpwd'>
-    <text class='left'> 密码：</text><text class='right'>点击重置</text>
+  <view class='item'>
+    <text class='left'> 缺勤次数：</text><text class='right'>{{noflagStu}}</text>
   </view>
+  <view class='item'>
+    <text class='left'>出勤率：</text><text
+      class='right'>{{Math.round(isflagStu * 100 / (noflagStu+isflagStu))}}</text>
+  </view>
+
   <view class='item' bindtap='exit'>
-    <text class='left'>退出：</text><text class='right'>></text>
+    <text class='left'>退出</text><text class='right'>></text>
   </view>
 </view>
