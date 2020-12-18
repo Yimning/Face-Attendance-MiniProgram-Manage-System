@@ -6,36 +6,38 @@
         </view> -->
         <view class='s1'>
             <view class="courseText">
-                <Select title="课程号-课程名：" options="{{courseInfoArry}}" isRequired="true" bind:mySelectItem='onSelectItem'
-                    name='courseID' showkey='courseName' />
-                <Select title="星期：" options="{{weeks}}" isRequired="true" bind:mySelectItem='onSelectItem' name='id'
+                <Select title="课程号-课程名：" options="{{courseInfoArry}}" isRequired="true"
+                    bind:mySelectItem='onSelectCourseInfo' name='courseID' showkey='courseName' />
+                <Select title="星期：" options="{{weeks}}" isRequired="true" bind:mySelectItem='onSelectWeeks' name='id'
                     showkey='weekday' />
                 <view class='input'>
                     <text class='input-key'>搜索查询<text style="color:red">*</text></text>
-                    <input class="input-text" placeholder="请输入学生姓名" bindinput="nameInput" value="{{content}}"></input>
+                    <input class="input-text" placeholder="学生角色无权搜索" bindinput="nameInput" wx:if="{{isStudent}}"
+                        disabled="{{true}}" value="{{content}}"></input>
+                    <input class="input-text" placeholder="请输入学生姓名" bindinput="nameInput" wx:else
+                        value="{{content}}"></input>
                 </view>
-
             </view>
         </view>
     </view>
     <view class="fenge"></view>
     <view class="yesornot">
         <view class="no" bindtap="onChangeShowState" id="noFlag">
-            <view class="zhi" bindtap="onChangeShowState" id="noFlag">
+            <view class="zhi" id="noFlag">
                 <view class="iconn">
-                    <image class="iconnimg" src="../../../images/more/no.png" bindtap="onChangeShowState" id="noFlag">
+                    <image class="iconnimg" src="../../../images/more/no.png" id="noFlag">
                     </image>
                 </view>
-                <view class="ming1" bindtap="onChangeShowState" id="noFlag">未签</view>
+                <view class="ming1" id="noFlag">未签</view>
             </view>
         </view>
         <view class="yes" bindtap="onChangeShowState" id="isFlag">
-            <view class="zhi" bindtap="onChangeShowState" id="isFlag">
+            <view class="zhi" id="isFlag">
                 <view class="iconn">
-                    <image class="iconnimg" src="../../../images/more/yes.png" bindtap="onChangeShowState" id="isFlag">
+                    <image class="iconnimg" src="../../../images/more/yes.png" id="isFlag">
                     </image>
                 </view>
-                <view class="ming1" bindtap="onChangeShowState" id="isFlag">已签</view>
+                <view class="ming1" id="isFlag">已签</view>
             </view>
         </view>
     </view>
@@ -43,7 +45,7 @@
     <view class="allh1" class="hide{{showView?'show':''}}">
         <block wx:for="{{attendanceInfo}}" wx:key="key">
             <view class="tiao" data-courseInfo="{{item}}" bindtap="bindViewTap">
-                <view wx:if="{{item.flag=='0'}}" class="ic1"></view>
+                <view wx:if="{{item.flag=='0'}}" class="ic2"></view>
                 <view wx:else class="ic3"></view>
                 <view class="shu">
                     <view class="name">{{item.course.courseID}}-{{item.course.courseName}}</view>
@@ -76,54 +78,34 @@
 
 
     <view class="allh1" class="hide{{showViewNoFlag?'show':''}}">
-        <view class="tiao">
-            <view class="ic1"></view>
-            <view class="shu">
-                <view class="name">phonegap程序设计</view>
-                <view class="date">截至日期：今天</view>
+        <block wx:for="{{attendanceInfo}}" wx:key="key">
+            <view class="tiao">
+                <view class="ic1"></view>
+                <view class="shu">
+                    <view class="name">{{item.course.courseID}}-{{item.course.courseName}}</view>
+                    <view class="date">{{item.recordTime}} {{item.weekDay}}</view>
+                </view>
+                <view class="tixing">
+                    <image class="tixingimg" src="../../../images/more/tixing.png"></image>
+                    <view class="tixingz">详情</view>
+                </view>
             </view>
-            <view class="tixing">
-                <image class="tixingimg" src="../../../images/more/tixing.png"></image>
-                <view class="tixingz">提醒</view>
-            </view>
-        </view>
-
-        <view class="tiao">
-            <view class="ic2"></view>
-            <view class="shu">
-                <view class="name">unity</view>
-                <view class="date">截至日期：2018-12-01</view>
-            </view>
-            <view class="tixing">
-                <image class="tixingimg" src="../../../images/more/tixing.png"></image>
-                <view class="tixingz">提醒</view>
-            </view>
-        </view>
-
-        <view class="tiao">
-            <view class="ic3"></view>
-            <view class="shu">
-                <view class="name">光轨作业</view>
-                <view class="date">截至日期：2018-01-01</view>
-            </view>
-            <view class="tixing">
-                <image class="tixingimg" src="../../../images/more/tixing.png"></image>
-                <view class="tixingz">提醒</view>
-            </view>
-        </view>
+        </block>
     </view>
 
     <view class="allh2" class="hide{{showViewIsFlag?'show':''}}">
-        <view class="tiao">
-            <view class="ic3"></view>
-            <view class="shu">
-                <view class="name">计算机图像处理</view>
-                <view class="date">提交日期：2018-12-01</view>
+        <block wx:for="{{attendanceInfo}}" wx:key="key">
+            <view class="tiao">
+                <view class="ic3"></view>
+                <view class="shu">
+                    <view class="name">{{item.course.courseID}}-{{item.course.courseName}}</view>
+                    <view class="date">{{item.recordTime}} {{item.weekDay}}</view>
+                </view>
+                <view class="tixing2">
+                    <image class="tixingimg" src="../../../images/more/zuoye.png"></image>
+                    <view class="tixingz1">查看出勤率</view>
+                </view>
             </view>
-            <view class="tixing2">
-                <image class="tixingimg" src="../../../images/more/zuoye.png"></image>
-                <view class="tixingz1">查看分数</view>
-            </view>
-        </view>
+        </block>
     </view>
 </view>

@@ -1,0 +1,63 @@
+/* pages/more/attendance/detail/detail.wxss */
+
+.nav{
+  background-color: #fff;
+  color: #fff;
+}
+.top{
+width: 250rpx;
+height: 250rpx;
+margin: 0 auto;
+}
+.nickname{
+margin-bottom: 10rpx;
+text-align: center;
+}
+.item{
+height: 70rpx;
+background-color: #fff;
+margin: 20rpx;
+display: flex;
+border-radius: 20rpx;
+}
+.left{
+display: flex;
+justify-content: flex-start;
+flex-grow: 1;
+}
+.right{
+display: flex;
+justify-content: flex-end;
+flex-grow: 1;
+color: #ccc;
+margin-right: 20rpx;
+}
+
+.userinfo {
+  position: relative;
+  width: 750rpx;
+  height: 320rpx;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.userinfo-avatar {
+  overflow:hidden;
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 20rpx;
+  margin-top: 50rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+ 
+.userinfo text {
+  /* color: #fff; */
+  font-size: 14px;
+  background-color: #c0c0c0;
+  border-radius:40%;
+} 

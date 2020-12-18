@@ -54,25 +54,19 @@
     </view>
   </view>
   <view class='item'>
-    <text class='left'>学号：</text><text class='right'>{{myinfo.studentNumber}}</text>
+    <text class='left'>教师号：</text><text class='right'>{{myinfo.teacherNumber}}</text>
   </view>
   <view class='item'>
-    <text class='left'>姓名：</text><text class='right'>{{myinfo.studentName}}</text>
+    <text class='left'>姓名：</text><text class='right'>{{myinfo.teacherName}}</text>
   </view>
   <view class='item'>
-    <text class='left'> 性别：</text><text class='right'>{{myinfo.studentSex}}</text>
+    <text class='left'> 性别：</text><text class='right'>{{myinfo.teacherSex}}</text>
   </view>
   <view class='item'>
-    <text class='left'> 出生年月日：</text><text class='right'>{{myinfo.studentBirth}}</text>
+    <text class='left'> 出生年月日：</text><text class='right'>{{myinfo.teacherBirth}}</text>
   </view>
   <view class='item'>
-    <text class='left'> 班级号：</text><text class='right'>{{myinfo.studentClass}}</text>
-  </view>
-  <view class='item'>
-    <text class='left'>专业：</text><text class='right'>{{myinfo.profession}}</text>
-  </view>
-  <view class='item'>
-    <text class='left'> 入学年份:</text><text class='right'
+    <text class='left'> 从教时间:</text><text class='right'
       wx:if="{{myinfo.joinTime==''|| myinfo.joinTime==null}}">null</text><text class='right'
       wx:else>{{myinfo.joinTime}}</text>
   </view>

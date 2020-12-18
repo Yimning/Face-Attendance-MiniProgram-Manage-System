@@ -111,7 +111,7 @@ function GetRequest(url, data, callBackRes, callBackError) {
     method: 'GET',
     data: data,
     header: {
-      "content-type": 'application/json'
+      'Content-Type': 'application/json'
     },
     success: function (res) {
       callBackRes(res);
