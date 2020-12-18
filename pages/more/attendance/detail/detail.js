@@ -18,10 +18,10 @@ Page({
     attendanceTeacherIsFlagParams: {},
     isflagStu: 0,
     noflagStu: 0,
-    allflagStu: 0,
+    percentflagStu: '',
     isflagTeacher: 0,
     noflagTeacher: 0,
-    allflagTeacher: 0,
+    percentflagTeacher: '',
   },
 
   /**
@@ -93,6 +93,12 @@ Page({
     this.setData({
       isflagStu: res.data.length
     })
+    let str = Number(( this.data.isflagStu / (this.data.isflagStu + this.data.noflagStu)) * 100).toFixed(2);
+    str += '%';
+    this.setData({
+      percentflagStu:str
+    })
+    // console.log(str);
   },
   studentIsflagError(res) {
     console.log(res);
@@ -102,7 +108,6 @@ Page({
     this.setData({
       noflagStu: res.data.length
     })
-    // console.log(this.data);
   },
   studentNoflagError: function (res) {
     console.log(res)
@@ -110,6 +115,11 @@ Page({
   teacherIsflagRes: function (res) {
     this.setData({
       isflagTeacher: res.data.length
+    })
+    let str = Number(( this.data.isflagTeacher / (this.data.isflagTeacher + this.data.noflagTeacher)) * 100).toFixed(2);
+    str += '%';
+    this.setData({
+      percentflagTeacher:str
     })
   },
   teacherIsflagError(res) {

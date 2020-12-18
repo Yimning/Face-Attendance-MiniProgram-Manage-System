@@ -106,7 +106,6 @@ Page({
         attendanceInfo: res.data,
       })
     }
-
   },
   attendanceError(res) {
     console.log(res);
@@ -227,8 +226,13 @@ Page({
   bindViewTap: function (e) {
     // console.log(e.currentTarget.dataset.courseinfo);
     wx.navigateTo({
-      url: '../attendance/detail/detail?attendanceInfoSelect='+JSON.stringify(e.currentTarget.dataset.courseinfo),
+      url: '../attendance/detail/detail?attendanceInfoSelect=' + JSON.stringify(e.currentTarget.dataset.courseinfo),
     })
+  },
+  isFlagTap: function (e) {
+    console.log(e.currentTarget.dataset.courseinfo);
+  },
+  noFlagTap: {
 
   },
   objectToArray(object) {
