@@ -1,15 +1,15 @@
 <view class='moreTab'>
 	<view class="{{selsectState[0]?'moreSelected':''}}" bindtap='clickJoke'>
-		<image class="icon-image" src="../../../images/happy.png" />
+		<image class="icon-image" src="../../../images/more/happy.png" />
 		<view class='tabText'>开心一刻</view>
 	</view>
 	<view class="{{selsectState[1]?'moreSelected':''}}" bindtap='clickDict'>
-		<image class="icon-image" src="../../../images/cidian.png" />
+		<image class="icon-image" src="../../../images/more/cidian.png" />
 		<view class='tabText'>词典</view>
 	</view>
 
 	<view class="{{selsectState[2]?'moreSelected':''}}" bindtap='clickExpre'>
-		<image class="icon-image" src="../../../images/kuaidi.png" />
+		<image class="icon-image" src="../../../images/more/kuaidi.png" />
 		<view class='tabText'>快递</view>
 	</view>
 	<view class="{{selsectState[3]?'moreSelected':''}}" bindtap='clickMore'>

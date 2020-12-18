@@ -49,9 +49,10 @@
   border-radius: 50%;
 }
 .conImage{
-  width: 320px;
-  height: 320px;
-  margin-left: 35rpx;
+  width: 280px;
+  height: 350px;
+  margin-left: 25rpx;
+  /* margin-right: 25rpx; */ 
 }
 
 .showContent{

@@ -1,5 +1,22 @@
 <view class="circle">
   <view class="page__hd">
+    <navigator url="/pages/more/scTable/scTable" hover-class="none">
+      <view class="weui-item border-shadow background-1">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="weui-item__title">
+              选修学生表
+            </view>
+            <view class="weui-item__desc">Table</view>
+          </view>
+          <view class="weui-flex__item">
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
+              src="/images/about_icon.png" />
+          </view>
+        </view>
+      </view>
+    </navigator>
+
     <navigator url="/pages/more/attendance/attendance" hover-class="none">
       <view class="weui-item border-shadow background-2">
         <view class="weui-flex">
@@ -11,45 +28,12 @@
           </view>
           <view class="weui-flex__item">
             <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
-              src="/images/help_icon.png" />
+              src="/images/search_icon.png" />
           </view>
         </view>
       </view>
     </navigator>
 
-    <button class="clear" open-type="contact">
-      <view class="weui-item border-shadow background-1">
-        <view class="weui-flex">
-          <view class="weui-flex__item">
-            <view class="weui-item__title">
-              联系客服
-            </view>
-            <view class="weui-item__desc">Contact Us</view>
-          </view>
-          <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
-              src="/images/service_icon.png" />
-          </view>
-        </view>
-      </view>
-    </button>
-
-    <button class='clear' open-type="share" catchtap="share">
-      <view class="weui-item border-shadow background-2">
-        <view class="weui-flex">
-          <view class="weui-flex__item">
-            <view class="weui-item__title">
-              分享
-            </view>
-            <view class="weui-item__desc">Share</view>
-          </view>
-          <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
-              src="/images/share_icon.png" />
-          </view>
-        </view>
-      </view>
-    </button>
     <navigator url="/pages/more/news/news" hover-class="none">
       <view class="weui-item border-shadow background-1">
         <view class="weui-flex">
@@ -95,28 +79,28 @@
           </view>
           <view class="weui-flex__item">
             <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
-              src="/images/search_icon.png" />
+              src="/images/core/more@select.png" />
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url="/pages/more/waitandsee/waitandsee" hover-class="none">
+      <view class="weui-item border-shadow background-2">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="weui-item__title">
+              敬请期待...
+            </view>
+            <view class="weui-item__desc">Wait And See</view>
+          </view>
+          <view class="weui-flex__item">
+            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
+              src="/images/core/news@select.png" />
           </view>
         </view>
       </view>
     </navigator>
 
-    <navigator url="/pages/more/about/about" hover-class="none">
-      <view class="weui-item border-shadow background-1">
-        <view class="weui-flex">
-          <view class="weui-flex__item">
-            <view class="weui-item__title">
-              关于
-            </view>
-            <view class="weui-item__desc">About</view>
-          </view>
-          <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
-              src="/images/about_icon.png" />
-          </view>
-        </view>
-      </view>
-    </navigator>
   </view>
   <view class="page__bd">
     <view class="weui-footer weui-footer_fixed-bottom">
