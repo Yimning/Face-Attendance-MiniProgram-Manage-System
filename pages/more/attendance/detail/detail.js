@@ -67,20 +67,19 @@ Page({
     this.attendanceStudentIsFlag(this.data.attendanceUrl, this.data.attendanceStudentIsFlagParams);
   },
   getTeacherA() {
+    const url = app.globalData.globalRequestUrl + '/scourse/findScourseByteacherNumbercIDcD';
     this.data.attendanceTeacherIsFlagParams = {
-      teacherNumber: this.data.attendanceInfoSelect.student.studentNumber,
-      recordTime: this.data.attendanceInfoSelect.recordTime,
-      courseID: this.data.attendanceInfoSelect.courseID,
-      flag: "1",
+      tID: this.data.attendanceInfoSelect.teacher.teacherNumber,
+      cID: this.data.attendanceInfoSelect.courseID,
     };
     this.data.attendanceTeacherNoFlagParams = {
       teacherNumber: this.data.attendanceInfoSelect.teacher.teacherNumber,
-      recordTime: this.data.attendanceInfoSelect.recordTime,
+      time: this.data.attendanceInfoSelect.recordTime,
       courseID: this.data.attendanceInfoSelect.courseID,
       flag: "0",
     };
     this.attendanceTeacherNoFlag(this.data.attendanceUrl, this.data.attendanceTeacherNoFlagParams);
-    this.attendanceTeacherIsFlag(this.data.attendanceUrl, this.data.attendanceTeacherIsFlagParams);
+    this.attendanceTeacherIsFlag(url, this.data.attendanceTeacherIsFlagParams);
   },
   attendanceStudentNoFlag(url, param) { util.GetRequest(url, param, this.studentNoflagRes, this.studentNoflagError); },
   attendanceStudentIsFlag(url, param) { util.GetRequest(url, param, this.studentIsflagRes, this.studentIsflagRes); },
@@ -93,10 +92,10 @@ Page({
     this.setData({
       isflagStu: res.data.length
     })
-    let str = Number(( this.data.isflagStu / (this.data.isflagStu + this.data.noflagStu)) * 100).toFixed(2);
+    let str = Number((this.data.isflagStu / (this.data.isflagStu + this.data.noflagStu)) * 100).toFixed(2);
     str += '%';
     this.setData({
-      percentflagStu:str
+      percentflagStu: str
     })
     // console.log(str);
   },
@@ -112,20 +111,27 @@ Page({
   studentNoflagError: function (res) {
     console.log(res)
   },
+
+
+  //查询本次课程的应出勤的人数
   teacherIsflagRes: function (res) {
+    console.log(res)
     this.setData({
       isflagTeacher: res.data.length
     })
-    let str = Number(( this.data.isflagTeacher / (this.data.isflagTeacher + this.data.noflagTeacher)) * 100).toFixed(2);
+    let str = Number(((this.data.isflagTeacher - this.data.noflagTeacher) / this.data.isflagTeacher) * 100).toFixed(2);
     str += '%';
     this.setData({
-      percentflagTeacher:str
+      percentflagTeacher: str
     })
   },
   teacherIsflagError(res) {
     console.log(res);
   },
+
+  //查询本次课程的时间段内为未出勤的人
   teacherNoflagRes: function (res) {
+    console.log(res)
     this.setData({
       noflagTeacher: res.data.length
     })

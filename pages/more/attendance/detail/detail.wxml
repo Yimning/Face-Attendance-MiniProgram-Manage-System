@@ -41,7 +41,7 @@
       <text class='left'>该学生姓名：</text><text class='right'>{{attendanceInfoSelect.student.studentName}}</text>
     </view>
     <view class='item'>
-      <text class='left'>该学生学生：</text><text class='right'>{{attendanceInfoSelect.student.studentNumber}}</text>
+      <text class='left'>该学生学号：</text><text class='right'>{{attendanceInfoSelect.student.studentNumber}}</text>
     </view>
     <view class='item'>
       <text class='left'> 该学生出勤次数：</text><text class='right'>{{isflagStu}}</text>
@@ -53,7 +53,7 @@
       <text class='left'>该学生出勤率：</text><text class='right'>{{percentflagStu}}</text>
     </view>
     <view class='item'>
-      <text class='left'>本课程出勤率：</text><text class='right'>{{percentflagStu}}</text>
+      <text class='left'>本课程出勤率：</text><text class='right'>{{percentflagTeacher}}</text>
     </view>
   </view>
 
