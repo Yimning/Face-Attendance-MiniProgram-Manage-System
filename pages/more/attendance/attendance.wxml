@@ -90,7 +90,7 @@
                     <view class="tixingz">详情</view>
                 </view>
             </view>
-            <view class="tiao" wx:if="{{isStudent}}">
+            <view class="tiao" wx:else>
                 <view class="ic1"></view>
                 <view class="shu" data-courseInfo="{{item}}" bindtap="bindViewTap">
                     <view class="name">{{item.course.courseID}}-{{item.course.courseName}}</view>
@@ -98,7 +98,7 @@
                 </view>
                 <view class="tixing" data-courseInfo="{{item}}" bindtap="isFlagTap">
                     <image class="tixingimg" src="../../../images/more/tixing.png"></image>
-                    <view class="tixingz">详情</view>
+                    <view class="tixingz">补签</view>
                 </view>
             </view>
         </block>

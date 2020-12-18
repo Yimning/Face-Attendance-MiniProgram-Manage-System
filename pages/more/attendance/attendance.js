@@ -140,6 +140,8 @@ Page({
     if (util.getUserInfo().roseID == '1') {
       this.data.attendanceParams = {
         teacherNumber: util.getUserInfo().userID,
+        courseID: this.data.courseID,
+        weekDay: this.data.weekday
       };
     }
     this.getAttendanceInfo(this.data.attendanceUrl, this.data.attendanceParams);
@@ -191,7 +193,7 @@ Page({
           flag: "0"
         };
       }
-      this.isFlag(this.data.attendanceUrl, this.data.attendanceParams);
+      this.notFlag(this.data.attendanceUrl, this.data.attendanceParams);
     }
   },
   isFlag(url, param) {
@@ -229,12 +231,39 @@ Page({
       url: '../attendance/detail/detail?attendanceInfoSelect=' + JSON.stringify(e.currentTarget.dataset.courseinfo),
     })
   },
+  //补签
   isFlagTap: function (e) {
     console.log(e.currentTarget.dataset.courseinfo);
+    const url = '/api/attendance/updateAttendanceInfo';
+    this.data.paramJson = {
+      recordID: e.currentTarget.dataset.courseinfo.recordID,
+      studentNumber: e.currentTarget.dataset.courseinfo.studentNumber,
+      weekDay: e.currentTarget.dataset.courseinfo.weekDay,
+      flag: e.currentTarget.dataset.courseinfo.flag,
+      courseID: e.currentTarget.dataset.courseinfo.courseID
+    };
+    this.updateAttendance(url, this.data.paramJson);
   },
-  noFlagTap: {
+  //记却
+  noFlagTap() {
+    const url = '/api/attendance/updateAttendanceInfo1';
+    this.data.paramJson = {
+      recordID: e.currentTarget.dataset.courseinfo.recordID,
+      studentNumber: e.currentTarget.dataset.courseinfo.studentNumber,
+      weekDay: e.currentTarget.dataset.courseinfo.weekDay,
+      flag: e.currentTarget.dataset.courseinfo.flag,
+      courseID: e.currentTarget.dataset.courseinfo.courseID
+    };
+    this.updateAttendance(url, this.data.paramJson);
 
   },
+  updateAttendance(url, param) {
+    util.PostRequest(url, param, this.updateAttendanceRes, this.updateAttendanceError);
+  },
+  updateAttendanceRes() { },
+  updateAttendanceError() { },
+
+
   objectToArray(object) {
     var createArr = []
     for (var index in object) {
