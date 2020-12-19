@@ -12,7 +12,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.showModal({
+      title: '温馨提示',
+      content: '敬请期待，感谢支持！🤣',
+      success: function (res) {
+        if (res.confirm) {
+         
+          //页面跳转
+          wx.reLaunch({
+            url: '../../more/more',
+          })
+        } else if (res.cancel) {
+           //页面跳转
+           wx.reLaunch({
+            url: '../../more/more',
+          })
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
 
   /**
