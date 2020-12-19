@@ -155,7 +155,7 @@ Page({
     } else {
       wx.showToast({
         title: '答案错误',
-        icon: 'None',
+        icon: 'none',
         duration: 1500
       })
     }
@@ -168,7 +168,7 @@ Page({
     } else {
       wx.showToast({
         title: '答案错误',
-        icon: 'None',
+        icon: 'none',
         duration: 1500
       })
     }
