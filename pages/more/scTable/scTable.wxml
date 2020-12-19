@@ -1,2 +1,24 @@
 <!--pages/more/scTable/scTable.wxml-->
-<text>pages/more/scTable/scTable.wxml</text>
+
+<view class="container">
+  <view class="user-header">
+    <view class="user-avatar-box">
+      <image class="user-avatar" src="{{userInfo.avatar}}"></image>
+    </view>
+    <view class="user-info-box">
+      <text class="user-name">{{userInfo.userName}}</text>
+    </view>
+    <view class="scan">
+      <image src="/images/icon/userd.png"></image>
+    </view>
+  </view>
+
+  <view class="user-content">
+    <block wx:for="{{courseInfo}}" wx:key="key">
+      <view class="cell-item" hover-class="none" data-courseInfoSelect="{{item}}" bindtap="bindViewTap">
+        <text class="text">{{item.course.courseID}}-{{item.course.courseName}}</text>
+        <image src="/images/user/enter.png">"></image>
+      </view>
+    </block>
+  </view>
+</view>

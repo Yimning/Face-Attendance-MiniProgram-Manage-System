@@ -1,4 +1,4 @@
-/* pages/more/scTable/scTable.wxss */
+/* pages/more/scTable/scDetail/scDetail.wxss */
 
 .user-header {
   display: flex;
@@ -9,7 +9,7 @@
   font-size: 14pt;
 }
 .user-avatar-box {
-  width: 300rpx;
+  /* width: 100rpx; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,13 +20,14 @@
   border-radius: 50%;
 }
 .user-info-box {
+  margin-left: 30rpx;
   flex: 1;
   display: flex;
   font-size: 14pt;
   line-height: 150%;
 }
 .user-name {
-  font-size: 16pt;
+  font-size:40rpx;
   flex: 1;
   color: #000;
 }

@@ -1,66 +1,66 @@
 // pages/more/scTable/scTable.js
+var app = getApp();
+var util = require('../../../utils/util.js');
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    isMailAdmin: false,
+    isExpressAdmin: false,
+    userInfo: {},
+    courseInfo: {},
+    url: '',
+    paramJson: '',
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
+    var that = this;
+    that.setData({
+      userInfo: util.getUserInfo(),
+    });
+    this.data.url = app.globalData.globalRequestUrl + "/scourse/findScourseBytIDcIDcD";
+    this.data.paramJson = {
+      tID: util.getUserInfo().userID,
+    };
+    //获取课程信息
+    this.getcourseInfo(this.data.url, this.data.paramJson);
+  },
+  //获取课程信息
+  getcourseInfo(url, paramJson) {
+    util.GetRequest(url, paramJson, this.callBackRes, this.callBackError);
+  },
+  callBackRes: function (res) {
+    console.log(res)
+    if (res.data != [] || res.data != '') {
+      this.setData({
+        courseInfo: res.data,
+      });
+    }
 
   },
+  callBackError(res) {
+    console.log(res);
+  },
+  bindViewTap: function (e) {
+    // console.log(e.currentTarget.dataset.courseinfo);
+    wx.navigateTo({
+      url: '../scTable/scDetail/scDetail?courseInfoSelect=' + JSON.stringify(e.currentTarget.dataset.courseinfoselect),
+    })
+  },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+
+
+
+
+
+
   onReady: function () {
-
+    // 页面渲染完成
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-
+    // 页面显示
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
   onHide: function () {
-
+    // 页面隐藏
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload: function () {
-
+    // 页面关闭
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

@@ -52,9 +52,9 @@ Page({
       selectIndex: 2
     });
     wx.showToast({
-      title: "还没空做",
+      title: "还没空做🤣",
       duration: 3000,
-      icon: "success"
+      icon: "none"
     })
 
     // var url = "https://www.yimning.cn:8082/teacher/count";

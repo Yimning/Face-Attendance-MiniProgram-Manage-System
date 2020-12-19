@@ -1,0 +1,22 @@
+<!--pages/more/scTable/scDetail/scDetail.wxml-->
+
+<view class="container">
+  <view class="user-header">
+    <view class="user-avatar-box">
+      <text class="user-name">课程号:{{courseInfoSelect.courseID}}</text>
+      <text class="user-name">{{courseInfoSelect.course.courseName}}</text>
+    </view>
+    <view class="user-info-box">
+      <text class="user-name">共{{studentList.length}}人</text>
+    </view>
+    <view class="scan"></view>
+  </view>
+  <view class="user-content">
+    <block wx:for="{{studentList}}" wx:key="key">
+      <view class="cell-item" hover-class="none" data-studentList="{{item}}" bindtap="bindViewTap">
+        <text class="text">{{item.student.studentNumber}} {{item.student.studentName}}</text>
+        <image src="/images/user/enter.png">"></image>
+      </view>
+    </block>
+  </view>
+</view>

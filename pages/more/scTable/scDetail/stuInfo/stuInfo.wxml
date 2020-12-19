@@ -1,0 +1,36 @@
+<!--pages/more/scTable/scDetail/stuInfo/stuInfo.wxml-->
+<view class='content'>
+  <view class='nav'>
+    <view class='top' bindtap='preview' data-src='{{studentList.student.face}}'>
+      <view wx:if="{{studentList.student.face==null||studentList.student.face==''}}">
+        <image class="userinfo-avatar" src="/images/user/user.png"></image>
+      </view>
+      <view wx:else>
+        <image class="userinfo-avatar" src="{{studentList.student.face}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class='item'>
+    <text class='left'>学号：</text><text class='right'>{{studentList.student.studentNumber}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'>姓名：</text><text class='right'>{{studentList.student.studentName}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'> 性别：</text><text class='right'>{{studentList.student.studentSex}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'> 出生年月日：</text><text class='right'>{{studentList.student.studentBirth}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'> 班级号：</text><text class='right'>{{studentList.student.studentClass}}</text>
+  </view>
+  <view class='item'>
+    <text class='left'>专业：</text><text class='right'>{{studentList.student.profession}}</text>
+  </view>
+  <view class='item' bindtap='setemail'>
+    <text class='left'> 入学年份:</text><text class='right'
+      wx:if="{{studentList.student.joinTime==''|| studentList.student.joinTime==null}}">null</text><text class='right'
+      wx:else>{{studentList.student.joinTime}}</text>
+  </view>
+</view>
