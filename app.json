@@ -1,10 +1,9 @@
 {
-  "pages": [    "pages/index/index",  "pages/welcome/welcome",
-    "pages/more/attendance/attendance",
-   
-   
+  "pages": [     
+    "pages/welcome/welcome",
+    "pages/index/index", 
     "pages/table/table", 
-    "pages/more/more", 
+    "pages/more/more",  
     "pages/my/my",
     "pages/weather/weather",
     "pages/switchcity/switchcity",
@@ -15,10 +14,15 @@
     "pages/my/changePassword/changePassword",  
     "pages/my/help/help", 
     "pages/my/about/about", 
+    "pages/my/information/information", 
+    "pages/more/attendance/attendance",
     "pages/logs/logs",
     "pages/more/more/more",
+    "pages/more/scTable/scTable",
     "pages/more/attendance/detail/detail",
-
+    "pages/more/waitandsee/waitandsee",
+    "pages/more/scTable/scDetail/scDetail",
+    "pages/more/scTable/scDetail/stuInfo/stuInfo",
     "pages/default/default",
     "pages/more/form/form",
     "pages/more/notice/notice",
