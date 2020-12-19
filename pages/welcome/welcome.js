@@ -81,7 +81,7 @@ Page({
   forgetTap: function (event) {
     wx.showToast({
       title: "请到网页端重置密码",
-      icon: "success",
+      icon: "none",
       duration: 2000
     })
   },
@@ -101,7 +101,7 @@ Page({
       wx.showToast({
         title: '账号或密码为空',
         icon: 'none',
-        duration: 500,
+        duration: 1000,
         mask: false,//是否显示透明蒙层，防止触摸穿透，默认：false 
  
       })
