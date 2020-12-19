@@ -76,19 +76,6 @@ Page({
       showOneButtonDialog: true,
       selectedCourse:data
     })
-    // this.dialogConfirm.showNew({
-    //   isShow: true,
-    //   title: '温馨提示',
-    //   content: '确定退出系统吗',
-    //   cancelText: '取消',
-    //   okText: '确定',
-    //   fail: function () {
-    //     console.log('回调取消')
-    //   },
-    //   success: function () {
-    //     console.log('回调成功')
-    //   }
-    // })
   },
   powerDrawer: function (e) {
     var currentStatu = e.currentTarget.dataset.statu;
@@ -142,9 +129,4 @@ Page({
       );
     }
   }
-
-
-
-
-
 })
