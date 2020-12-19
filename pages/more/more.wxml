@@ -1,21 +1,23 @@
 <view class="circle">
   <view class="page__hd">
-    <navigator url="/pages/more/scTable/scTable" hover-class="none">
-      <view class="weui-item border-shadow background-1">
-        <view class="weui-flex">
-          <view class="weui-flex__item">
-            <view class="weui-item__title">
-              选修学生表
+    <view wx:if="{{isTeacher}}">
+      <navigator url="/pages/more/scTable/scTable" hover-class="none">
+        <view class="weui-item border-shadow background-1">
+          <view class="weui-flex">
+            <view class="weui-flex__item">
+              <view class="weui-item__title">
+                选修学生表
+              </view>
+              <view class="weui-item__desc">Table</view>
             </view>
-            <view class="weui-item__desc">Table</view>
-          </view>
-          <view class="weui-flex__item">
-            <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
-              src="/images/about_icon.png" />
+            <view class="weui-flex__item">
+              <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
+                src="/images/about_icon.png" />
+            </view>
           </view>
         </view>
-      </view>
-    </navigator>
+      </navigator>
+    </view>
 
     <navigator url="/pages/more/attendance/attendance" hover-class="none">
       <view class="weui-item border-shadow background-2">
