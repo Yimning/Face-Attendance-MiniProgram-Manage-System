@@ -27,9 +27,12 @@ Page({
   },
   qrcode: function () {
     //页面跳转
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/my/myinfo/info',
     })
+    // wx.redirectTo({
+    //   url: '/pages/my/myinfo/info',
+    // })
   },
   exit: function (e) {
     wx.showModal({
@@ -46,9 +49,13 @@ Page({
             key: 'userInfo',
           })
           //页面跳转
-          wx.reLaunch({
-            url: '../../../pages/welcome/welcome',
-          })
+          setTimeout(function () {
+            wx.reLaunch({
+              url: '/pages/welcome/welcome',
+            })
+
+          }, 200)
+
         } else if (res.cancel) {
           console.log('用户点击取消')
         }
