@@ -26,7 +26,7 @@
             <view class="weui-item__title">
               考勤记录
             </view>
-            <view class="weui-item__desc">Instructions</view>
+            <view class="weui-item__desc">Attendance Records</view>
           </view>
           <view class="weui-flex__item">
             <image class="weui-media-box__thumb" style="width:80rpx;height:80rpx;float:right;"
