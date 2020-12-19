@@ -25,6 +25,10 @@
       <text class="text">绑定手机号</text>
       <image src="/images/user/enter.png">"></image>
     </navigator>
+    <navigator url="/pages/my/information/information" class="cell-item" hover-class="none">
+      <text class="text">我的通知</text>
+      <image src="/images/user/enter.png">"></image>
+    </navigator>
     <navigator url="/pages/my/help/help" class="cell-item" hover-class="none">
       <text class="text">使用帮助</text>
       <image src="/images/user/enter.png">"></image>
