@@ -37,7 +37,6 @@ Page({
       title: '提示',
       content: '实时更新，但因为免费接口资源受限，新闻详情请访问官方网站哈😘',
       success: function (res) {
-
       }
     }) */
     var url = event.currentTarget.dataset.url;
