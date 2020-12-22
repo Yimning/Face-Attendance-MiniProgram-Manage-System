@@ -33,25 +33,25 @@ Page({
 
   //数据受限没有详情信息，给用户一个提示就好
   bindViewTap: function (event) {
-/*     wx.showModal({
-      title: '提示',
-      content: '实时更新，但因为免费接口资源受限，新闻详情请访问官方网站哈😘',
-      success: function (res) {
-        if (res.confirm) {
-          wx.showToast({
-            title: "谢谢支持",
-            duration: 1000,
-            icon: "success"
-          })
-        } else if (res.cancel) {
-          wx.showToast({
-            title: "🙄🙄🙄",
-            duration: 1000,
-            icon: "success"
-          })
-        }
-      }
-    }) */
+// /*     wx.showModal({
+//       title: '提示',
+//       content: '实时更新，但因为免费接口资源受限，新闻详情请访问官方网站哈😘',
+//       success: function (res) {
+//         if (res.confirm) {
+//           wx.showToast({
+//             title: "谢谢支持",
+//             duration: 1000,
+//             icon: "success"
+//           })
+//         } else if (res.cancel) {
+//           wx.showToast({
+//             title: "🙄🙄🙄",
+//             duration: 1000,
+//             icon: "success"
+//           })
+//         }
+//       }
+//     }) */
     var url = event.currentTarget.dataset.url;
     console.log(url);
     wx.navigateTo({
